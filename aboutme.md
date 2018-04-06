@@ -1,16 +1,11 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Just a tibble.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+>**_"Don't ask yourself what the world needs. Ask yourself what makes you come alive and then go and do that, because what the world needs is people who have come alive."_** - Howard Thurman
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I made this website as a way to display the applied work I'm doing while I learn analytical tools and report on Nevada's economy.
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I live in Las Vegas, Nevada and my favorite projects cover subjects related to community development, sustainability, workforce development, real estate, industry sectors, and more in my home state.
