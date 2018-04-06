@@ -5,7 +5,7 @@ subtitle: Just a tibble.
 ---
 
 >_"Don't ask yourself what the world needs. Ask yourself what makes you come alive and then go and do that, because what the world needs is people who have come alive."_  
-**- Howard Thurman**
+                        **- Howard Thurman**
 
 I made this website as a way to display the applied work I'm doing while I learn analytical tools and report on Nevada's economy.
 
