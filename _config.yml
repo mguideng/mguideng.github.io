@@ -4,7 +4,7 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
-url: "http://username.github.io"
+url: "http://mariaguideng.github.io"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -17,18 +17,15 @@ baseurl: ""
 title: Maria Guideng
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Analytics + NV
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  ABOUT ME: "aboutme"
+  PROJECTS:
+  RESUME: "mariaguidengresume.pdf"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -71,10 +68,9 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
-  email: "someone@example.com"
+  email: "nerdyrie@gmail.com"
   facebook: daattali
-  github: daattali
+  github: mariaguideg
   twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
@@ -92,14 +88,17 @@ social-network-links:
 
 # Select which share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  rss: true
+  twitter: false
+  facebook: false
   google: false
   linkedin: true
+  email: true
+  github: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty:  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
