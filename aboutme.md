@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: About
 subtitle: Just a tibble.
 ---
 
@@ -10,3 +10,5 @@ subtitle: Just a tibble.
 This website was created as a way for me to display the work I'm doing as I learn analytical tools using data on Nevada's economy.
 
 I studied economics and statistics at UNLV. I performed strategic analyses for 10 years as a consultant at a management consulting firm and then a few years as an analyst for the Governor’s economic development division. I live in Las Vegas and my favorite applied projects cover subjects related to community development, sustainability, workforce development, real estate, industry sectors, and more in my home state.
+
+![mg-img](img/mariaguideng-img.jpg)
