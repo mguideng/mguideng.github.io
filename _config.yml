@@ -24,6 +24,7 @@ description: Analytics + NV
 # List of links in the navigation bar
 navbar-links:
   PROJECTS: "projects"
+  DATA: "data"
   ABOUT: "aboutme"
   RESUME: "resume"
 
@@ -33,7 +34,6 @@ avatar: "/img/nincat.jpg"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-title-img: /img/welcomelv.jpg
 # title-img: /path/to/image
 
 # --- Background colour/image options --- #
@@ -108,7 +108,7 @@ url-pretty:
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-118015741-1"
 
 # Google Tag Manager ID
 #gtm: ""
