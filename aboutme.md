@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hi, I'm Maria
-subtitle: It's Nice To Meet You 
+title: Nice to Meet You
+subtitle: # A tibble: about_me
 ---
 
 
