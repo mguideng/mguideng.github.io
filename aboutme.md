@@ -1,8 +1,13 @@
 ---
 layout: page
-title: About
-subtitle: Just a tibble.
+title: It's Nice To Meet You
 ---
+
+<center>
+*About
+
+**Just a tibble
+</center>
 
 >_"Don't ask yourself what the world needs. Ask yourself what makes you come alive and then go and do that, because what the world needs is people who have come alive."_  
                         **- Howard Thurman**
