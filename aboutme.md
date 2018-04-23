@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Nice to Meet You
-subtitle: # A tibble: about_me
+subtitle: '# A tibble: about_me'
 ---
 
 
 >_"Don't ask yourself what the world needs. Ask yourself what makes you come alive and then go and do that, because what the world needs is people who have come alive."_  
                         **- Howard Thurman**
 
-*A tibble about me*
+
 
 This website was created as a way for me to display the work I'm doing as I learn analytical tools using data on Nevada's economy.
 
