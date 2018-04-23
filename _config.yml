@@ -50,6 +50,13 @@ footer-col: "#F5F5F5"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
 
+# "#F5F5F5" light gray
+# "#404040" almost black
+# "#FFFFFF" almost white
+# "#008AFF" sea blue
+# "#0085A1" darksea blue
+# "#777777" dark gray
+
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
