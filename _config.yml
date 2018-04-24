@@ -23,7 +23,7 @@ description: Analytics + NV
 
 # List of links in the navigation bar
 navbar-links:
-  PROJECTS: "projects"
+  PROJECTS: "https://www.gitshowcase.com/mguideng"
   DATA: "data"
   ABOUT: "aboutme"
   RESUME: "resume"
