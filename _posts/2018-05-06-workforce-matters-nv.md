@@ -1,5 +1,11 @@
-Workforce Matters to Nevada's Economic Development and the Companies It Attracts
-================
+---
+layout: post
+title: Workforce Matters
+subtitle: Nevada's Economic Development and the Companies it Attract
+bigimg: /img/giga.jpg
+tags: [r-project, kableextra, location-quotients, nevada, las-vegas]
+---
+
 Maria Guideng
 
 A goal worth striving for in economic development is to maintain and further develop growth and prosperity for its regional economy, achieved through productive businesses and workers that raise the standards of living for its residents. With the U.S. economy and many others globally being in better shape than they were a few years ago, companies are expanding and selecting those regions where it can grow and prosper.
