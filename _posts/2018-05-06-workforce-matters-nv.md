@@ -20,7 +20,7 @@ The need for trained and experienced workers has increased to the point where to
 **A favorable tax environment is not enough**  
 In more recent years, economic development initiatives in Nevada have been successful in attracting and supporting companies across primary industry sectors needed to help diversify the economic base of its communities. Having worked a few years in economic development at the state level, I've had the opportunity to work directly with companies looking at Nevada as a potential place to invest capital and create jobs. My dealings in supporting companies in their decision making weren't nearly as in-depth as the local and regional-level partners, who were at the forefront of this process. But even in my somewhat limited exposure, it was evident that having a favorable tax and business regulatory environment was not enough. Workforce and labor market considerations were just as important. Much of the ad hoc requests from prospects were for metrics that reflect the concentration of both skilled workers and service/production processes within the state's communities. These included labor costs, total labor force and employment and unemployment rates in various industries and job types.
 
-![1snapshot](img/1snapshot.PNG)
+![1snapshot](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/1snapshot.PNG)
 
 A priority for Nevada has been in helping companies recruit and train skilled workers that are productive at competitive wages. Ask any seasoned economic development or workforce specialists here, and they could elaborate in detail about business cases and how having a qualified workforce is often held in higher regard than even the cost of labor. There are numerous site selection surveys out there that support these findings on the national level, but what do the numbers have to say for Nevada? 
 
@@ -49,7 +49,7 @@ Since FY 2015 to date, there have been nearly 150 companies that have applied fo
 **Respondents' profile**  
 A profile of these companies shows that the "Manufacturing" sector is highly represented, making up nearly half (or 54) of the 118 total respondents. "Professional & Business" and "Trade, Transportation & Utilities" each accounted for another approximately 20 percent of the total. These three sectors are identified in the state's 2012 economic development plan as being among targeted growth opportunities under the "Mining, Materials, and Manufacturing," "Business IT Ecosystems," and "Logistics and Operations" cross-sectors. 
 
-<iframe src="https://public.tableau.com/views/NevadaSiteSelectionFactors/PROFILE?:embed=y&:display_count=yes&publish=yes" width="90%" height="500"></iframe>
+![2profile](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2profile.PNG)
 
 By job growth, a quarter of the companies (29) have committed to a minimal job creation in the range of 26 to 50 jobs, followed by 25 companies creating between 11 and 25 jobs. Meanwhile, 27 others are expected to commit to over 100 newly-created jobs. 
 
@@ -61,7 +61,7 @@ It's important to note that these numbers do not reflect just how big these comp
 
 For the overall results, the average ratings for these 12 factors skew upwards, shown by the predominantly green shading. Each factor translates into either lower operating costs, operational productivity, accessibility, or lower barriers to entrance-all considered relevant on some level for any business. As such, it is expected to mostly average out of 3 (i.e., neutral in importance) or above. Take a look at the last row-the grand total-and indeed all factors average out to range between 3.15 ("Access to higher education resources") and 4.71 ("State and local tax incentives"). Also, two of the site selection factors stand out as being "very high" or "somewhat high" in importance (i.e., between 4 and 5 rating): "State and local incentives" is the highest, followed closely by the "State and local tax structure."
 
-<iframe src="https://public.tableau.com/views/NevadaSiteSelectionFactors/PROFILE?:embed=y&:display_count=yes&publish=yes" width="90%" height="500"></iframe>
+![3ratings](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/3ratings.PNG)
 
 It's a given that for any company that jumps through the hoops in order to apply and qualify for incentive approval, the incentives are inherently significant to the company. Some make the case that if not for them, they would choose to locate in another state that offers more competitive advantages and incentives. The benefits offered by Nevada's incentive programs are primarily in the form of tax abatements. Abatements are *reductions* in the rates companies would pay for the sales tax on capital equipment purchases, payroll taxes, taxes on personal property, and occasionally for real property taxes. Basically, they remove some of the tax burden for a period of time to assist the company in ramping up operations.
 
@@ -90,7 +90,7 @@ Criteria that drive the site and location search varies considerably from compan
 
 The survey findings from Nevada's incentivized companies reflects that the availability of a qualified workforce as being among the most important factor, regardless of industry and region within the state. While the state consistently attracts talent into its urban areas for its affordability, job opportunities, natural spaces and various quality of life factors, its workforce has a number of deficiencies that threaten the long-term attainment of its economic development goals. The more apparent ones are the lack of diversity in the job base, underperformance or gaps in K-12 and higher education, talent retention and mid to high-level skill gaps. However, the level of collaboration between stakeholders in Nevada's workforce system are at an all-time high, where state and local organizations, together with its workforce partners in education, private industry and others have renewed focus in addressing these challenges. A collective focus is to develop and maintain a modern workforce through initiatives that support our key industry sectors by aligning education, job training and workforce development programs in local areas to achieve targeted objectives.
 
-![4wfsystem](img/4wfsystem.PNG)
+![4wfsystem](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/4wfsystem.PNG)
 
 When it comes to talent development, the private sector has a vital role in contributing to the creation of a skilled local workforce. Aside from providing ongoing career training, those in private industry truly know how skills are changing in their organizations, placing them in the best position to communicate to other stakeholders on what the evolving skill requirements are. Jobholders themselves are increasingly aware that relying on past education, training and experiences may no longer be sufficient. To remain competitive, it's essential to develop new job skills throughout their career in order to meet the needs of the rapidly changing workplace. The willingness of employers and workers to embrace these roles will impact the ability of Nevada's communities to address some of the most pressing challenges its workforces face. It has yet to be seen then, whether the workforce initiatives and infrastructure in place for Nevada will develop and evolve in such a way to meet the changing needs of its workers who are ready, willing and able to fulfill the skilled workplace expectations of the future.
   
@@ -98,7 +98,7 @@ When it comes to talent development, the private sector has a vital role in cont
   
 ===============================================
 
-**On a personal note and for an analyst audience**
+**Learning points**
 
 Workforce and labor market considerations are paramount to companies looking for a location to grow its operations and for a region's economic development. This is common knowledge and that should be enough, but again, I'm interested in seeing what the numbers had to say. Aside from satiating my own curiosities, this project is really more about applying R's regular expressions (regex) capabilities to mine text and my learning how to put together a dashboard in Tableau. After some thought, this was an ideal fit and I knew exactly what I wanted to do (but definitely wasn't sure if that exact way was possible). The first step was to compile the publically available PDF reports that included the applications. Then, come up with a methodological approach based on the patterns in the reports' layout and on the tools I wanted to use. Spending time upfront to understand intricacies in the reports was crucial to streamlining the rest of the process and reduce trial and errors. I won't bore you with details, but let me just say this: when taking a stab-in-the dark approach, working with string pattern matching and the very finicky nature of the regex language is not the time to do it. This is where having a [regular expression cheat sheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf) came in very handy. Other learning points along the way: 
 
@@ -108,12 +108,11 @@ Workforce and labor market considerations are paramount to companies looking for
 
 * How to source files in R, and how it can be used as a for-loop function wrapper. The source script was used as an external wrapper function to run on my main script. The order for the command tasks were important. First convert the PDF files into text files, mine the text and then print the combined results into a single data frame. Otherwise, it would have made my code much longer to run the iterations for each of the applications.
 
-* How to put together a dashboard in Tableau 10.5. As expected, its GUI (referring to its Graphical User Interface) is point & click heavy. But certainly easier and more flexible than what I've done in the past: painstakingly converted Excel charts and tables for use in in InDesign and Illustrator. Oh, and the interactive features are fantastic.
+* How to put together a dashboard in Tableau 10.5. As expected, its GUI (referring to its Graphical User Interface) is point & click heavy. But certainly more flexible than what I've done in the past: painstakingly converted Excel charts and tables for use in InDesign and Illustrator.
 
-* I'm reminded that reports were my least favorite part of projects when I worked in consulting. Writing is not a strong point for me but they're very useful experiences. Can't say I enjoyed this part, but I forced myself to finish anyway!
+* I'm reminded that reports were my least favorite part of projects when I worked in consulting. Writing is not my strong point and I forced myself to finish this. Can't say I enjoyed it, but it's use experience.
 
 The process for this project was the usual "turn data into information, then information into insights". Here's the links to the results, depending on the viewpoint in this multi-step process:
 
 **Data source:** [My GitHub](https://github.com/mguideng), repo: "stringmatch-siteselect-nv"  
-**Information:** [My PublicTableau](https://public.tableau.com/profile/maria.guideng#!), viz: "NevadaSiteSelectionFactors"  
-**Insights:** Here!
+**Information:** [My PublicTableau](https://public.tableau.com/profile/maria.guideng#!), viz: "NevadaSiteSelectionFactors"
