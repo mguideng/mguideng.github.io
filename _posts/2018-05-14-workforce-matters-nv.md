@@ -11,7 +11,7 @@ output:
 
 With the U.S. economy and many others globally being in better shape than they were a few years ago, companies are expanding and selecting those regions where it can grow and prosper. While one company assesses potential regions based on the labor force, ease of regulatory procedures, land availability and utility costs, another company with similar project specifications may focus on logistical speed and reliability, and therefore looks at transportation infrastructures and supply chain linkages to its suppliers and targeted customers. While the site selection criteria can be very specific depending on each company's unique needs and drivers, these represent some of the more common ones that influence the site location decision.
 
-**As the saying goes, change is the only constant **  
+**As the saying goes, change is the only constant**  
 Site selection is a complex process that requires big commitments. It requires evaluating and prioritizing the right combination of factors that offset risks and work to a company's competitive advantages, not only for its current situation, but also in alignment with its future strategic goals to favor the long-term operating success of the company. The global economy, new competition and emerging technologies drive constant transformations in the way products and services are processed. Thus, companies themselves must evolve and this, in turn, leads to changes in site and location requirements. In the midst of all this variability, there is common consensus among companies that generally points to one factor that tends to be more fixed: the need for talent that comes from a skilled workforce. 
 
 **Prioritizing workforce skills**  
@@ -20,7 +20,7 @@ The need for trained and experienced workers has increased to the point where to
 **A favorable tax environment is not enough**  
 In more recent years, economic development initiatives in Nevada have been successful in attracting and supporting companies across primary industry sectors needed to help diversify the economic base of its communities. Having worked a few years in economic development at the state level, I've had the opportunity to work directly with companies looking at Nevada as a potential place to invest capital and create jobs. My dealings in supporting companies in their decision making weren't nearly as up close as the local and regional-level partners, who were at the forefront of this process. But even in my somewhat limited exposure, it was evident that having a favorable tax and business regulatory environment was not enough. Workforce and labor market considerations were just as important. Companies were very much interested in knowing more about workforce training opportunities and the concentration of workers in various industries and job types. 
 
-![1snapshot](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/1snapshot.PNG)
+![1snapshot](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/1snapshot.png)
 
 A priority for Nevada is helping companies recruit and train skilled workers that are productive at competitive wages. Ask any seasoned economic development or workforce specialists here, and they could elaborate in detail about business cases and how having a qualified workforce is often held in higher regard than even the cost of labor. There are numerous site selection surveys out there that support these findings on the national level, but what do the numbers have to say for Nevada? 
 
