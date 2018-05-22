@@ -59,7 +59,7 @@ It's important to note that these numbers do not reflect just how big these comp
 
 **Site selection factor rating results**
 
-> An interactive dashboard that summarizes the results is available via this [link](https://public.tableau.com/profile/maria.guideng#!/vizhome/NevadaSiteSelectionFactors/RATINGS). 
+> An interactive dashboard that summarizes the results is available via this [link](https://public.tableau.com/profile/maria.guideng#!/vizhome/NevadaSiteSelectionFactorsSurvey/RATINGS). 
 
 For the overall results, the average ratings for these 12 factors skew upwards, shown by the predominantly green shading. Each factor translates into either lower operating costs, operational productivity, accessibility or lower barriers to entrance - all considered relevant on some level for any business. As such, it is expected to mostly average out of 3 (i.e., neutral in importance) or above. Take a look at the last row - the grand total - and indeed all factors average out to range between 3.22 ("Access to higher education resources") and 4.71 ("State and local tax incentives"). Also, two of the site selection factors stand out as being very high in importance: "State and local incentives" is the highest, followed closely by the "State and local tax structure."
 
@@ -108,7 +108,7 @@ The first step was to compile the publically available PDF reports that included
 
 * If I ever have to put together an application or form again, I'll definitely be thinking about the layout structure and format. This makes a huge difference in the ease (or difficulty) of liberating the content through scraping methods.
 
-* That I should know better than to make simple survey mistakes. For measures of importance on a 5-point scale, the instructions could be written better to reduce ambiguity and validate results. Rather than "1 = very low; 5 = very high", it should be framed as: "1 = Unimportant, 2 = Somewhat Unimportant, 3 = Neither Important or Unimportant, 4 = Somewhat Important, 5 = Very Important." The option for "very low" is leading in that it assumes a factor has some importance when it may have no importance at all to respondent. It's subtle, but "very low" (i.e., 1) in one survey could read as either being "unimportant" (1) or "somewhat important" (2) in another.
+* That I should know better than to make simple survey mistakes. For measures of importance on a 5-point scale, the instructions could be written better to reduce ambiguity and validate results. Rather than "1 = very low; 5 = very high", it should be framed as: "1 = Unimportant, 2 = Somewhat Unimportant, 3 = Neither Important or Unimportant, 4 = Somewhat Important, 5 = Very Important." The option for "very low" is leading in that it assumes a factor has some importance when it may have no importance at all to the respondent. It's subtle, but "very low" (i.e., 1) in one survey could read as either being "unimportant" (1) or "somewhat important" (2) in another.
 
 * How to source files in R, and how it can be used as an external script to run on a current script. The main script contained a for-loop to first convert a PDF file into a text file, then call on the external source script that does the text mining by using a wrapper function, then return back to the main script to save the mined information from each text file, before finally combining the results into a single data frame. The order of the tasks were important so being able to loop through a sourced script made the code more efficient when going through the iterations for each of the applications.
 
