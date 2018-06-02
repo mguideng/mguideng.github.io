@@ -23,8 +23,9 @@ description: Analytics + NV
 
 # List of links in the navigation bar
 navbar-links:
-  GITHUB PROJECTS: "https://www.gitshowcase.com/mguideng"
-  TABLEAU PROJECTS: "https://public.tableau.com/profile/maria.guideng#!/"
+  PROJECTS:
+    - GitHub: "https://www.gitshowcase.com/mguideng"
+    - Tableau: "https://public.tableau.com/profile/maria.guideng#!/"
 #  DATA: "data"
   ABOUT: "aboutme"
 #  RESUME: "resume"
