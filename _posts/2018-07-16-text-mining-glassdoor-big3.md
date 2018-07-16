@@ -488,32 +488,32 @@ Focusing on just the pros for now, what words are employees using the most to de
 
 Bain employees describe something as "fun" more frequently than McKinsey or BCG, with that word making it as one of the top ten used the most frequently. Then there's "people," "culture" and "learning" in which all the firms use the most, but _what about_ them?
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/1unigram.prosplot-1.png)<!-- -->
+![1](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/1unigram.prosplot-1.png)
 
 Looking at the word pairs below sheds more light about what is considered the greatest aspects about working at a Big Three: working with "smart people", the opportunities for "professional development," and given these two, I'm assuming the "learning curve" is a steep one and they enjoy the challenges of gaining knowledge. As for the "culture," Bain employees refer to it as being a "supportive" one, whereas BCG and McKinsey have less consensus about the varying words to describe it and are not listed.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/2bigram.prosplot-1.png)<!-- -->
+![2](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/2bigram.prosplot-1.png)
 
 Some of these words we've looked at so far are neutral, such as "people," "career" and "team." We can limit them to those categorized as being either positive (e.g., "fun" and "smart") or negative (e.g., "hard" and "uncertain") in sentiment.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/3barcompare.pros-1.png)<!-- -->
+![3](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/3barcompare.pros-1.png)
 
 BCG and McKinsey workers are more similar in their sentiments, describing their experiences as mostly being "smart" and "amazing" and probably receiving good "benefits" packages. As for workers at Bain, there's more focus on a "fun" and "supportive" environment. Even the negative words used in the context of the pros like "challenging", "hard" and "steep" indicates that they enjoy a demanding environment that tests their abilities. Do you interpret it this way as well? 
 
 **Cons**  
 Let's move on to the cons section, where we'll examine the same visuals as above. First, the common single words.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/4unigram.consplot-1.png)<!-- -->
+![4](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/4unigram.consplot-1.png)
 
 All three firms reference the "hours" as being the most frequently discussed downside of their workplaces, relatively more at Bain since its frequency is double that of the next word. There's the word "life." Intuitively it makes sense that it's used together with the other frequent "balance" since after all, context is key and we're talking about the cons. For consultants, "travel" is overrated, probably because they have to do it so much. Also, "client" made it on the list, likely referencing the difficulties of meeting the very high demands of clients that is so common for this industry. 
 
 The word pairs below provides some clarification, where indeed some variation of maintaining a good work-life balance is difficult given the hours and travel requirements. 
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/5bigram.consplot-1.png)<!-- -->
+![5](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/5bigram.consplot-1.png)
 
 For sentiments, "hard", "difficult" and "tough" are synonymous with each other (where "tough" should be considered a negative). Taken together with what we know previously about work-life balance, it's very likely they're describing the challenges of maintaining a satisfying lifestyle.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/6barcompare.cons-1.png)<!-- -->
+![6](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/6barcompare.cons-1.png)
 
 **Sentiment Scoring of Pros & Cons**  
 In this section, let's consider whether the written reviews as a whole tend to be expressed in a more negative, positive or neutral light. One way to determine this is by computing a sentiment score for both the pros and cons taken together.
@@ -524,7 +524,7 @@ In this section, let's consider whether the written reviews as a whole tend to b
 
 A net score for each review was derived by summing the +1 and -1 points. It is measured on a polar scale, with a negative value (less than zero) representing a more negative sentiment, and positive value (greater than zero) representing a more positive sentiment. Below shows the distribution of the reviewers' scores.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/7hist-1.png)<!-- -->
+![7](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/7hist-1.png)
 
 The central tendency based on sentiment scores shows that reviewers at MBB firms tend be quite neutral in the way they express their experiences. With such a high share of neutrally scored content, which I'll simply interpret as being between -2 and +2, it's likely that most reviewers are making general statements or statements that carry little sentiment that reflects lack of emotionally charged opinions.
 
@@ -576,13 +576,13 @@ To put this into a bit more perspective, I consider neutral to be pretty good in
 
 Lastly, the panel charts below show how the scores have changed over time at each of the three firms. A score for each review is represented by a single blue-shaded bar. It begins with the first review in 2008 and ends with the last review posted to date. Note that each chart is on a free-scale for Reviewer ID (on the x-axis) and each firm has a different number of total reviews; this makes it easier to see patterns within each individual chart however they are harder to compare across charts.
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/8senscore.sentxtplot-1.png)<!-- -->
+![8](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/8senscore.sentxtplot-1.png)
 
 Again, for our purposes, a review is considered neutral if the score falls between -2 and +2 (black lines on the y-axis). Notice any patterns? Indeed we do see that the distribution of sentiment among reviewers are around near 0 and neutral, especially for McKinsey reviewers in the past few years. 
 
 It might be easier to take in this visual if we just compute the annual average scores for the three firms and view it that way. It may appear that there are fluctuations, but it's much more subtle than that since they're within a close fit range (-1.5 to 1.5). Also, it wasn't until around 2013/2014 that there were enough reviews on an annual basis to provide a more robust corpus body of text to run text analyses on. We've just past half of this year, so the 2018 score is incomplete. 
 
-![](2018-07-16-text-mining-glassdoor-big3_files/figure-html/9senscore.sentxtplot.annual-1.png)<!-- -->
+![9](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/9senscore.sentxtplot.annual-1.png)
 
 The stars are considered a reliable measure of satisfaction as is, but text analysis gives us an additional piece of the picture that can help us better understand what it's like to work at a particular employer. Given these considerations, sentiments have shown consistent satisfaction among MBB workers over the past ten years. 
 
