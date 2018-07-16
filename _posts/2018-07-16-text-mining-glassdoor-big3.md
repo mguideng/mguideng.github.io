@@ -2,7 +2,7 @@
 layout: post
 title: Text Mining Glassdoor Reviews (in R)
 subtitle: Case of MBB Consulting
-bigimg: /img/consultcloud.png
+bigimg: /img/mckbuilding.jpg
 tags: [r-project, glassdoor, webscraping, text-mining, text-analytics, sentiment-analysis]
 output: 
   html_document: 
@@ -430,6 +430,7 @@ A big chunk of position titles were also unknown, but it's likely that they're m
 
 
 ###Part 2: Star Ratings Section
+
 Based on the Glassdoor star ratings, how do MBB employees rate the companies they work for? Pretty high actually, where the "Overall" ratings for all are considered above the average of 3.4 (based on the 700,000 employers reviewed on Glassdoor). 
 
 <table class="table table-striped table-hover table-condensed" style="font-size: 9px; margin-left: auto; margin-right: auto;">
