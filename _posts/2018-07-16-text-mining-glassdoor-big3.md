@@ -47,7 +47,7 @@ We'll use the "Big Three" as an example in this post. That's **McKinsey & Co.**,
 
 Having never worked at a Big Three, my observations about what it's like to work there are purely subjective. So with that said, let's check out the results.
 
-###Part 1: Reviewer Profile
+**PART 1: REVIEWER PROFILE**
 
 First, let's get an overview of the reviewers' profile in terms of the years reviews were posted, as well as their locations and title positions.
 
@@ -432,7 +432,7 @@ A big chunk of position titles were also unknown, but it's likely that they're m
 </table>
 
 
-###Part 2: Star Ratings Section
+**PART 2: STAR RATINGS SECTION**
 
 Based on the Glassdoor star ratings, how do MBB employees rate the companies they work for? Pretty high actually. "Overall" ratings between 4 and 5 reflect a workplace where employees are considered "very satisfied." As a baseline comparison, the average is 3.4 where employees say satisfaction is just "OK" (based on the 700,000 employers reviewed on Glassdoor).
 
@@ -483,7 +483,7 @@ Based on the Glassdoor star ratings, how do MBB employees rate the companies the
 For Bain employees, satisfaction was highest in all factors when compared to others, especially when it comes to the firm's culture and approval of senior leadership. McKinsey consistently received relatively lower satisfaction marks, and more so for the work-life balance factor. Ratings for BCG were split down the middle between the two others, but shared more similarities with McKinsey employees.
 
 
-###Part 3: Glassdoor Company Reviews Section
+**PART 3: COMPANY REVIEWS SECTION**
 
 Here's where the text mining was applied. The company reviews section of Glassdoor show what employees have to say about the workplace. A review is divided into separate topics about the pros and cons. The _pros_ are the advantages and includes comments around what an employee liked or thought worked well in the company. Conversely, the _cons_ are the disadvantages and reflect what employees disliked or thought needs improvement. 
 
