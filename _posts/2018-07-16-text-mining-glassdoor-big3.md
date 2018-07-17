@@ -31,12 +31,11 @@ output:
 
 
 
-_**Abstract**_  
-_This project scrapes Glassdoor.com, a website that includes company reviews by employees. Basic text mining tasks were applied to find out what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive or neutral way. Final results shown as visuals, both tables and graphs._
+_This post is about scraping Glassdoor.com and applying basic text mining tasks to find out what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive or neutral way. Final results shown as visuals, both tables and graphs._
 
 =======
 
-Ever wondered what it's like to work for a specific company? If so, you've probably looked into [Glassdoor]( https://www.glassdoor.com). The site contains user-generated content on which people share feedback about company-specific compensation, interview experiences and post anonymous reviews that evaluate the workplace. Its features include star ratings (on a 5-point scale), where employees award the company stars on a mix of factors. 
+Ever wondered what it's like to work for a specific company? If so, you've probably looked into [Glassdoor]( https://www.glassdoor.com). The site contains user-generated content on which people share feedback about company-specific compensation, interview experiences and post anonymous reviews that evaluate the workplace. Its features include star ratings (on a 5-point scale), where employees award the company stars on a mix of factors such as workplace culture, work/life balance and senior management. 
 
 The star ratings are enough for some people to get an idea of whether the prospective company has the right environment for them, but for others, it doesn't tell the story about sentiments towards the workplace. Sentiments reflect the attitudes and opinions of people based on what they have to say - whether they are positive, negative or neutral - and can provide a proxy for employee satisfaction. 
 
@@ -44,7 +43,9 @@ It makes sense to want to work at a place where employee satisfaction is high. T
 
 **An alternative is to streamline this task and get a high-level overview shown primarily as tables and charts.** One way to do this is through text mining. The idea is to apply web scraping to the written reviews about a company posted on Glassdoor to create a database of text. After obtaining this data, it can be applied to text analytics and [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis).
 
-We'll use the "Big Three" as an example in this post. That's McKinsey & Co., The Boston Consulting Company and Bain & Co. - or widely known as MBB - and they're the world's largest consulting firms by revenue. A little bit about MBB: they all focus on strategy consulting at board level and obviously as leaders in their industry, they excel at what they do. The world's most ambitious and brightest minds in business are attracted to these consultancies. They invest heavily in their people who undergo rigorous core strategy training and engage with Fortune 500 clients.They're known for providing ongoing opportunities and support for professional advancement even after leaving the firm. Along with the territory though comes the downsides of long hours and travel requirements that tend to upend life outside of work. Having never worked at a Big Three, my observations about what it's like to work there are purely subjective. So with that said, let's check out the results.
+We'll use the "Big Three" as an example in this post. That's **McKinsey & Co.**, **The Boston Consulting Company** and **Bain & Co.** - widely known as "MBB" - and they're the world's largest consulting firms by revenue. A little bit about MBB: they all focus on strategy consulting at board level and obviously as leaders in their industry, they excel at what they do. The world's most ambitious and brightest minds in business are attracted to these consultancies. They invest heavily in their people who undergo rigorous core strategy training and engage with Fortune 500 clients. They're known for providing ongoing opportunities and support for professional advancement even after leaving the firm (i.e., exit opportunities). Along with the territory though comes the downsides of long hours and travel requirements that tend to upend life outside of work. 
+
+Having never worked at a Big Three, my observations about what it's like to work there are purely subjective. So with that said, let's check out the results.
 
 ###Part 1: Reviewer Profile
 
@@ -52,7 +53,9 @@ First, let's get an overview of the reviewers' profile in terms of the years rev
 
 The use of peer review sites have grown to a point where today, many consider them to be a generally reliable source of feedback. The growth of Glassdoor is evident here, with MBB employee review contributions growing significantly since the site was created in 2008. To date, nearly 6,500 reviews total have been posted among the three firms.
 
-<table class="table table-hover table-striped table-condensed" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
+(Keep in mind that since they all have a different number of reviews, the amount of text we'll be looking at later will be smaller for BCG and larger for McKinsey and Bain.)
+
+<table class="table table-hover table-striped table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Number of Reviews by Year</caption>
  <thead>
   <tr>
@@ -115,7 +118,7 @@ The use of peer review sites have grown to a point where today, many consider th
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 308 </td>
+   <td style="text-align:right;width: 2cm; "> 307 </td>
    <td style="text-align:right;width: 2cm; "> 14.7 </td>
   </tr>
   <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>Boston Consulting Group - Total Reviews: 1,674</strong></td></tr>
@@ -157,7 +160,7 @@ The use of peer review sites have grown to a point where today, many consider th
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2015 </td>
    <td style="text-align:right;width: 2cm; "> 244 </td>
-   <td style="text-align:right;width: 2cm; "> 14.6 </td>
+   <td style="text-align:right;width: 2cm; "> 14.5 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2016 </td>
@@ -171,8 +174,8 @@ The use of peer review sites have grown to a point where today, many consider th
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 197 </td>
-   <td style="text-align:right;width: 2cm; "> 11.8 </td>
+   <td style="text-align:right;width: 2cm; "> 200 </td>
+   <td style="text-align:right;width: 2cm; "> 11.9 </td>
   </tr>
   <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>McKinsey &amp; Co. - Total Reviews: 2,691</strong></td></tr>
 <tr>
@@ -197,8 +200,8 @@ The use of peer review sites have grown to a point where today, many consider th
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2012 </td>
-   <td style="text-align:right;width: 2cm; "> 166 </td>
-   <td style="text-align:right;width: 2cm; "> 6.2 </td>
+   <td style="text-align:right;width: 2cm; "> 165 </td>
+   <td style="text-align:right;width: 2cm; "> 6.1 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2013 </td>
@@ -207,7 +210,7 @@ The use of peer review sites have grown to a point where today, many consider th
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2014 </td>
-   <td style="text-align:right;width: 2cm; "> 241 </td>
+   <td style="text-align:right;width: 2cm; "> 242 </td>
    <td style="text-align:right;width: 2cm; "> 9.0 </td>
   </tr>
   <tr>
@@ -217,25 +220,25 @@ The use of peer review sites have grown to a point where today, many consider th
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2016 </td>
-   <td style="text-align:right;width: 2cm; "> 490 </td>
+   <td style="text-align:right;width: 2cm; "> 491 </td>
    <td style="text-align:right;width: 2cm; "> 18.2 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2017 </td>
    <td style="text-align:right;width: 2cm; "> 543 </td>
-   <td style="text-align:right;width: 2cm; "> 20.2 </td>
+   <td style="text-align:right;width: 2cm; "> 20.1 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 259 </td>
-   <td style="text-align:right;width: 2cm; "> 9.6 </td>
+   <td style="text-align:right;width: 2cm; "> 263 </td>
+   <td style="text-align:right;width: 2cm; "> 9.8 </td>
   </tr>
 </tbody>
 </table>
 
 The locations of reviewers were not given in many instances, but from what is known, offices in New York City, Boston and Chicago are largely represented. 
 
-<table class="table table-hover table-striped table-condensed" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-striped table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Top 5 Number of Reviews by Location</caption>
  <thead>
   <tr>
@@ -253,7 +256,7 @@ The locations of reviewers were not given in many instances, but from what is kn
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Boston, MA </td>
-   <td style="text-align:right;width: 2cm; "> 187 </td>
+   <td style="text-align:right;width: 2cm; "> 186 </td>
    <td style="text-align:right;width: 2cm; "> 8.9 </td>
   </tr>
   <tr>
@@ -274,13 +277,13 @@ The locations of reviewers were not given in many instances, but from what is kn
   <tr grouplength="6"><td colspan="3" style="border-bottom: 1px solid;"><strong>Boston Consulting Group</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Not Given </td>
-   <td style="text-align:right;width: 2cm; "> 841 </td>
-   <td style="text-align:right;width: 2cm; "> 50.2 </td>
+   <td style="text-align:right;width: 2cm; "> 843 </td>
+   <td style="text-align:right;width: 2cm; "> 50.3 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Boston, MA </td>
    <td style="text-align:right;width: 2cm; "> 93 </td>
-   <td style="text-align:right;width: 2cm; "> 5.6 </td>
+   <td style="text-align:right;width: 2cm; "> 5.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> New York, NY </td>
@@ -289,7 +292,7 @@ The locations of reviewers were not given in many instances, but from what is kn
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Chicago, IL </td>
-   <td style="text-align:right;width: 2cm; "> 53 </td>
+   <td style="text-align:right;width: 2cm; "> 54 </td>
    <td style="text-align:right;width: 2cm; "> 3.2 </td>
   </tr>
   <tr>
@@ -305,12 +308,12 @@ The locations of reviewers were not given in many instances, but from what is kn
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>McKinsey &amp; Co.</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Not Given </td>
-   <td style="text-align:right;width: 2cm; "> 1252 </td>
+   <td style="text-align:right;width: 2cm; "> 1253 </td>
    <td style="text-align:right;width: 2cm; "> 46.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> New York, NY </td>
-   <td style="text-align:right;width: 2cm; "> 258 </td>
+   <td style="text-align:right;width: 2cm; "> 259 </td>
    <td style="text-align:right;width: 2cm; "> 9.6 </td>
   </tr>
   <tr>
@@ -335,7 +338,7 @@ The locations of reviewers were not given in many instances, but from what is kn
 
 A big chunk of position titles were also unknown, but it's likely that they're mostly different variations of the functional role of a consultant. 
 
-<table class="table table-hover table-striped table-condensed" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-striped table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Top 5 Number of Reviews by Position Title</caption>
  <thead>
   <tr>
@@ -348,7 +351,7 @@ A big chunk of position titles were also unknown, but it's likely that they're m
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Bain &amp; Co.</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 856 </td>
+   <td style="text-align:right;width: 2cm; "> 855 </td>
    <td style="text-align:right;width: 2cm; "> 40.9 </td>
   </tr>
   <tr>
@@ -374,7 +377,7 @@ A big chunk of position titles were also unknown, but it's likely that they're m
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Boston Consulting Group</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 817 </td>
+   <td style="text-align:right;width: 2cm; "> 819 </td>
    <td style="text-align:right;width: 2cm; "> 48.8 </td>
   </tr>
   <tr>
@@ -400,17 +403,17 @@ A big chunk of position titles were also unknown, but it's likely that they're m
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>McKinsey &amp; Co.</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 1215 </td>
-   <td style="text-align:right;width: 2cm; "> 45.2 </td>
+   <td style="text-align:right;width: 2cm; "> 1216 </td>
+   <td style="text-align:right;width: 2cm; "> 45.1 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Engagement Manager </td>
-   <td style="text-align:right;width: 2cm; "> 232 </td>
+   <td style="text-align:right;width: 2cm; "> 233 </td>
    <td style="text-align:right;width: 2cm; "> 8.6 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Associate </td>
-   <td style="text-align:right;width: 2cm; "> 226 </td>
+   <td style="text-align:right;width: 2cm; "> 227 </td>
    <td style="text-align:right;width: 2cm; "> 8.4 </td>
   </tr>
   <tr>
@@ -431,9 +434,9 @@ A big chunk of position titles were also unknown, but it's likely that they're m
 
 ###Part 2: Star Ratings Section
 
-Based on the Glassdoor star ratings, how do MBB employees rate the companies they work for? Pretty high actually, where the "Overall" ratings for all are considered above the average of 3.4 (based on the 700,000 employers reviewed on Glassdoor). 
+Based on the Glassdoor star ratings, how do MBB employees rate the companies they work for? Pretty high actually. "Overall" ratings between 4 and 5 reflect a workplace where employees are considered "very satisfied." As a baseline comparison, the average is 3.4 where employees say satisfaction is just "OK" (based on the 700,000 employers reviewed on Glassdoor).
 
-<table class="table table-striped table-hover table-condensed" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Star Ratings</caption>
  <thead>
   <tr>
@@ -482,54 +485,54 @@ For Bain employees, satisfaction was highest in all factors when compared to oth
 
 ###Part 3: Glassdoor Company Reviews Section
 
-Here's where the text mining was applied. The company reviews section of Glassdoor show what employees have to say about the workplace. A review is divided into seperate topics about the pros and cons. The _pros_ are the advantages and includes comments around what an employee thought worked well in the company. Conversely, the _cons_ are the disadvantages and reflect what employees think need improvement. 
+Here's where the text mining was applied. The company reviews section of Glassdoor show what employees have to say about the workplace. A review is divided into separate topics about the pros and cons. The _pros_ are the advantages and includes comments around what an employee liked or thought worked well in the company. Conversely, the _cons_ are the disadvantages and reflect what employees disliked or thought needs improvement. 
 
 **Pros**  
-Focusing on just the pros for now, what words are employees using the most to describe their opinions and experiences? The charts below gives us a breakdown of the top words, both singular and pairs (i.e., two words that are used consecutively). For example, "consulting" is a single word, and "consulting firm" are word pairs next to each other. 
+Focusing on just the pros for now, what words are employees using the most to describe their opinions and experiences? The charts below gives us a breakdown of the top words, both singular and pairs (i.e., two words that are used consecutively). For example, "consulting" is a single word, and "consulting firm" are word pairs. 
 
 Bain employees describe something as "fun" more frequently than McKinsey or BCG, with that word making it as one of the top ten used the most frequently. Then there's "people," "culture" and "learning" in which all the firms use the most, but _what about_ them?
 
-![1](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/1unigram.prosplot-1.png)
+![1](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/1unigram.prosplot-1.png)
 
 Looking at the word pairs below sheds more light about what is considered the greatest aspects about working at a Big Three: working with "smart people", the opportunities for "professional development," and given these two, I'm assuming the "learning curve" is a steep one and they enjoy the challenges of gaining knowledge. As for the "culture," Bain employees refer to it as being a "supportive" one, whereas BCG and McKinsey have less consensus about the varying words to describe it and are not listed.
 
-![2](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/2bigram.prosplot-1.png)
+![2](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/2bigram.prosplot-1.png)
 
 Some of these words we've looked at so far are neutral, such as "people," "career" and "team." We can limit them to those categorized as being either positive (e.g., "fun" and "smart") or negative (e.g., "hard" and "uncertain") in sentiment.
 
-![3](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/3barcompare.pros-1.png)
+![3](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/3barcompare.pros-1.png)
 
-BCG and McKinsey workers are more similar in their sentiments, describing their experiences as mostly being "smart" and "amazing" and probably receiving good "benefits" packages. As for workers at Bain, there's more focus on a "fun" and "supportive" environment. Even the negative words used in the context of the pros like "challenging", "hard" and "steep" indicates that they enjoy a demanding environment that tests their abilities. Do you interpret it this way as well? 
+BCG and McKinsey workers are more similar in their use of sentiment expressions, describing their experiences as mostly being "smart" and "amazing" and probably receiving good "benefits" packages. As for workers at Bain, there's more focus on a "fun" and "supportive" environment. Even the negative words used in the context of the pros like "challenging", "hard" and "steep" indicates that they enjoy a demanding environment that tests their abilities. Do you interpret it this way as well? 
 
 **Cons**  
 Let's move on to the cons section, where we'll examine the same visuals as above. First, the common single words.
 
-![4](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/4unigram.consplot-1.png)
+![4](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/4unigram.consplot-1.png)
 
-All three firms reference the "hours" as being the most frequently discussed downside of their workplaces, relatively more at Bain since its frequency is double that of the next word. There's the word "life." Intuitively it makes sense that it's used together with the other frequent "balance" since after all, context is key and we're talking about the cons. For consultants, "travel" is overrated, probably because they have to do it so much. Also, "client" made it on the list, likely referencing the difficulties of meeting the very high demands of clients that is so common for this industry. 
+All three firms reference the "hours" as being the most frequently discussed downside of their workplaces, relatively more at Bain since its frequency is double that of the next word. There's the word "life." Intuitively it makes sense that it's used together with another frequent word "balance" since after all, context is key and we're talking about the cons. For consultants, "travel" is overrated, probably because they have to do it so much. Also, "client" made it on the list, likely referencing the difficulties of meeting the very high demands of clients that is so common in this industry. 
 
 The word pairs below provides some clarification, where indeed some variation of maintaining a good work-life balance is difficult given the hours and travel requirements. 
 
-![5](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/5bigram.consplot-1.png)
+![5](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/5bigram.consplot-1.png)
 
-For sentiments, "hard", "difficult" and "tough" are synonymous with each other (where "tough" should be considered a negative). Taken together with what we know previously about work-life balance, it's very likely they're describing the challenges of maintaining a satisfying lifestyle.
+For sentiments, "hard", "difficult" and "tough" are synonymous with each other (where "tough" should be considered a negative). Taken together with what we know previously about work-life balance, it's very likely they're describing the challenges of maintaining a normal lifestyle.
 
-![6](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/6barcompare.cons-1.png)
+![6](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/6barcompare.cons-1.png)
 
 **Sentiment Scoring of Pros & Cons**  
 In this section, let's consider whether the written reviews as a whole tend to be expressed in a more negative, positive or neutral light. One way to determine this is by computing a sentiment score for both the pros and cons taken together.
 
-* For the pros text portions of the reviews: Positive words were given +1 point and negative words were given -1 point.
+* For the **pros** text portions of the reviews: Positive words were given +1 point and negative words were given -1 point.
 
-* For the cons portion: negative words were assigned -1, however positive words were too. This is because using a positive word to say something negative by negating is significantly more common (e.g., "It's not good" rather than "It's bad").
+* For the **cons** portion: negative words were assigned -1, however positive words were too. This is because using a positive word to say something negative by negating is significantly more common (e.g., "It's not good" rather than "It's bad").
 
 A net score for each review was derived by summing the +1 and -1 points. It is measured on a polar scale, with a negative value (less than zero) representing a more negative sentiment, and positive value (greater than zero) representing a more positive sentiment. Below shows the distribution of the reviewers' scores.
 
-![7](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/7hist-1.png)
+![7](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/7hist-1.png)
 
-The central tendency based on sentiment scores shows that reviewers at MBB firms tend be quite neutral in the way they express their experiences. With such a high share of neutrally scored content, which I'll simply interpret as being between -2 and +2, it's likely that most reviewers are making general statements or statements that carry little sentiment that reflects lack of emotionally charged opinions.
+The variability of sentiment scores shows that reviewers at MBB firms tend be quite neutral in the way they express their experiences. With such a high share of neutrally scored content, which I'll simply interpret as being between -2 and +2, it's likely that most reviewers are making general statements or statements that carry little sentiment that reflects lack of emotionally charged opinions.
 
-<table class="table table-hover table-striped table-condensed" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-striped table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Variability of Sentiment Scores</caption>
  <thead>
   <tr>
@@ -545,28 +548,28 @@ The central tendency based on sentiment scores shows that reviewers at MBB firms
 <tbody>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Bain </td>
-   <td style="text-align:right;"> -27 </td>
+   <td style="text-align:right;"> -28 </td>
    <td style="text-align:right;"> -2 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.20 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> BCG </td>
-   <td style="text-align:right;"> -22 </td>
+   <td style="text-align:right;"> -25 </td>
    <td style="text-align:right;"> -2 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.06 </td>
-   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> McKinsey </td>
    <td style="text-align:right;"> -33 </td>
-   <td style="text-align:right;"> -2 </td>
+   <td style="text-align:right;"> -1 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.13 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
@@ -577,22 +580,22 @@ To put this into a bit more perspective, I consider neutral to be pretty good in
 
 Lastly, the panel charts below show how the scores have changed over time at each of the three firms. A score for each review is represented by a single blue-shaded bar. It begins with the first review in 2008 and ends with the last review posted to date. Note that each chart is on a free-scale for Reviewer ID (on the x-axis) and each firm has a different number of total reviews; this makes it easier to see patterns within each individual chart however they are harder to compare across charts.
 
-![8](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/8senscore.sentxtplot-1.png)
+![8](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/8senscore.sentxtplot-1.png)
 
-Again, for our purposes, a review is considered neutral if the score falls between -2 and +2 (black lines on the y-axis). Notice any patterns? Indeed we do see that the distribution of sentiment among reviewers are around near 0 and neutral, especially for McKinsey reviewers in the past few years. 
+Again, for our purposes, a review is considered neutral if the score falls between -2 and +2. Notice any patterns? Indeed we do see that the distribution of sentiment among reviewers are around near 0 and neutral, especially for McKinsey reviewers in the past few years. 
 
-It might be easier to take in this visual if we just compute the annual average scores for the three firms and view it that way. It may appear that there are fluctuations, but it's much more subtle than that since they're within a close fit range (-1.5 to 1.5). Also, it wasn't until around 2013/2014 that there were enough reviews on an annual basis to provide a more robust corpus body of text to run text analyses on. We've just past half of this year, so the 2018 score is incomplete. 
+Another way of viewing the scores over time is by the annual averages for the three firms. In the chart below, it may appear there are fluctutations, but it's actually subtle changes considering they're within a close fit range (-1.5 to 1.5). Also, it wasn't until around 2013/2014 that there were enough reviews on an annual basis to provide a more robust corpus body of text to run text analyses on. We've just past half of this year, so the 2018 score is incomplete. 
 
-![9](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16-text-mining-glassdoor-big3_files/9senscore.sentxtplot.annual-1.png)
+![9](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-07-16_files/9senscore.sentxtplot.annual-1.png)
 
 The stars are considered a reliable measure of satisfaction as is, but text analysis gives us an additional piece of the picture that can help us better understand what it's like to work at a particular employer. Given these considerations, sentiments have shown consistent satisfaction among MBB workers over the past ten years. 
 
 **Final Remarks**  
 Of course, I'm trying to make things simple here and nothing is really that simple. When creating a sentiment analysis system, pre-processing the text and validating the methodology are crucial steps that can dramatically affect results. A solid sentiment test gets complex so while this method doesn't fully capture the true sentiments of these reviews, it's a quick way to obtain general sentiments for my purposes. It's based on a decent sample size, the source is consistent where the language is clean, and the contextual subject matter is understood and it helped significantly that the reviews were already separated out by the pros and cons to provide perspective. A simple recall test was done, where I ran 10 reviews each of ones I deemed positive, negative and neutral in advance and the results were sufficient. 
 
-Additionally, there are some nuances that could be considered in the real world where, for example, offices within the same firms at different locations are likely to have their own unique environments. There were also a few posts I saw that were not written in the english language and should have been translated. I'm interested in getting the bigger picture, and we'll keep things simple for practicality. 
+Additionally, there are some nuances that could be considered in the real world where, for example, offices within the same firms at different locations are likely to have their own unique environments. There were also a few reviews I saw that were not written in the English language and should have been translated. I'm interested in getting the bigger picture, and we'll keep things simple for practicality. 
 
-So I'll leave you to consider these results and even encourage you to look into the many resources online where you can leverage text mining and sentiment analysis skills for yourself, even exploring the application of machine learning techniques. Keep in mind though, of the many limitations of applying computational methods when trying to uncover complex social phenomena that occurs in natural human language such as persuasion, humor, sarcasm, and so forth. 
+So I'll leave you to consider these results and even encourage you to look into the many resources online where you can leverage text mining and sentiment analysis skills for yourself, even exploring the application of machine learning techniques. Keep in mind though, of the many limitations of applying computational methods when trying to uncover complex social phenomena that occurs in natural human language such as sarcasm, humor, persuasion and so forth. 
 
 =======
 
