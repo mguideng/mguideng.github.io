@@ -7,7 +7,6 @@ tags: [r-project, glassdoor, webscraping, text-mining, text-analytics, sentiment
 output: 
   html_document: 
     keep_md: yes
-hidden: true
 ---
 
 
