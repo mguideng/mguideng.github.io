@@ -2,7 +2,7 @@
 layout: post
 title: Test
 subtitle: case of gmfg
-bigimg: /img/mckbuilding.jpg
+bigimg: /img/slot.jpg
 tags: [r-project, glassdoor, webscraping, text-mining, text-analytics, sentiment-analysis]
 output: 
   html_document: 
