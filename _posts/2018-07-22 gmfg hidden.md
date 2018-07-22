@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Test post
-subtitle: Case of Gaming Manufacturing
+title: Test
+subtitle: Case of gmfg
 bigimg: /img/mckbuilding.jpg
 tags: [r-project, glassdoor, webscraping, text-mining, text-analytics, sentiment-analysis]
 output: 
