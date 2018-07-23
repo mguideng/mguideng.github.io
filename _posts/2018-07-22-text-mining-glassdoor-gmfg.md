@@ -32,7 +32,7 @@ hidden: true
 
 
 
-This post summarizes company reviews on Glassdoor. It contains tables and charts to show what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive or neutral way.
+This post summarizes company reviews on Glassdoor. It contains tables and charts to show what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive, or neutral way.
 
 A variety of text analytics tasks were applied on a case of top companies in the gaming manufacturing sector that have a large presence in Las Vegas. These include:
 
@@ -40,7 +40,7 @@ A variety of text analytics tasks were applied on a case of top companies in the
 * IGT, and
 * Scientific Games.
  
-Companies in this sector provide gambling products by designing, developing and manufacturing gaming displays, slot machines, card counters and shufflers, transaction systems and related service support.
+Companies in this sector provide gambling products by designing, developing and manufacturing gaming displays, slot machines, card counters and shufflers, transaction systems, and related service support.
 
 To date, over 1,500 reviews total have been posted among the three companies. Each company has a different number of reviews where the amount of text analyzed is larger for IGT and smaller for Aristocrat and Scientific Games. Bar graphs are in a panel layout for all three companies to make it easier to see patterns within each individual chart and may not necessarily be comparable across charts.
 
