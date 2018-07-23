@@ -512,7 +512,7 @@ Let's move on to the cons section, where we'll examine the same visuals as above
 
 ![4](https://raw.githubusercontent.com/mguideng/text-mining-big3-reviews/master/images/4unigram.consplot-1.png)
 
-All three firms reference the "hours" as being the most discussed downside of their workplaces, relatively more at Bain since its frequency is double that of the next word. There's the word "life." Intuitively it makes sense that it's used together with another frequent word, "balance," since after all, context is key and we're talking about the cons. For consultants, "travel" is thought of negatively, possibly because they have to do it so much which is known to be common in this industry. Also, "client" made it on the list, likely referencing the difficulties of meeting the very high demands of clients that is so common in this industry. 
+All three firms reference the "hours" as being the most discussed downside of their workplaces, relatively more at Bain since its frequency is double that of the next word. There's the word "life." Intuitively it makes sense that it's used together with another frequent word, "balance," since after all, context is key and we're talking about the cons. For consultants, "travel" is thought of negatively, possibly because they have to do it so much which is known to be common in this industry. Also, "client" made it on the list, likely referencing the difficulties of meeting the very high demands of clients that is also common in this industry. 
 
 The word pairs below provides some clarification, where indeed some variation of maintaining a good work-life balance is difficult given the hours and travel requirements. 
 
@@ -587,7 +587,7 @@ Lastly, the panel charts below show how the scores have changed over time at eac
 
 Again, for our purposes, a review is considered neutral if the score falls between -2 and +2. Notice any patterns? Indeed we do see that the distribution of sentiment among reviewers are around near 0 and neutral, especially for McKinsey reviewers in the past few years. 
 
-Another way of viewing the scores over time is by the annual averages for the three firms. In the chart below, it may appear that there are fluctuations, but it's actually subtle changes considering they're within a close fit range (-1.5 to +1.5). Also, it wasn't until around 2013/2014 that there were enough reviews on an annual basis to provide a more robust corpus body of text to run text analyses on. We've just past half of this year, so the score is incomplete for 2018. 
+Another way of viewing the scores over time is by the annual averages for the three firms. In the chart below, it may appear that there are fluctuations, but it's actually subtle changes considering they're within a close fit range (-1.5 to +1.5). Also, it wasn't until around 2013/2014 that there were enough reviews on an annual basis to provide a more robust corpus body of text to run text analyses on. We're just past half of this year, so the score is incomplete for 2018. 
 
 ![9](https://raw.githubusercontent.com/mguideng/text-mining-big3-reviews/master/images/9senscore.sentxtplot.annual-1.png)
 
