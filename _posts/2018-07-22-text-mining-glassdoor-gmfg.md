@@ -46,7 +46,7 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
 
 =======
 
-##PART 1: REVIEWER PROFILE
+**PART 1: REVIEWER PROFILE**
 
 <table class="table table-hover table-striped table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Number of Reviews by Year</caption>
@@ -412,7 +412,7 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
 
 =======
 
-##PART 2: STAR RATINGS SECTION
+**PART 2: STAR RATINGS SECTION**
 
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Star Ratings</caption>
@@ -460,7 +460,7 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
 
 =======
 
-##PART 3: COMPANY REVIEWS SECTION
+**PART 3: COMPANY REVIEWS SECTION**
 
 **Pros**  
 
