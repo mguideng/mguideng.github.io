@@ -42,7 +42,7 @@ A variety of text analytics tasks were applied on a case of top companies in the
  
 Companies in this sector provide gambling products by designing, developing and manufacturing gaming displays, slot machines, card counters and shufflers, transaction systems, and related service support.
 
-To date, over 1,500 reviews total have been posted among the three companies. Each company has a different number of reviews where the amount of text analyzed is larger for IGT and smaller for Aristocrat and Scientific Games. Bar graphs are in a panel layout for all three companies to make it easier to see patterns within each individual chart and may not necessarily be comparable across charts.
+To date, over 1,500 reviews total have been posted among the three companies. Each company has a different number of reviews where the amount of text analyzed is larger for IGT and smaller for Aristocrat and Scientific Games. As such, bar graphs in a panel layout for all three companies may not necessarily be comparable across charts, however are displayed this way to make it easier to see patterns within each individual chart.
 
 =======
 
@@ -72,44 +72,44 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2011 </td>
    <td style="text-align:right;width: 2cm; "> 6 </td>
-   <td style="text-align:right;width: 2cm; "> 1.9 </td>
+   <td style="text-align:right;width: 2cm; "> 2.0 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2012 </td>
    <td style="text-align:right;width: 2cm; "> 19 </td>
-   <td style="text-align:right;width: 2cm; "> 6.1 </td>
+   <td style="text-align:right;width: 2cm; "> 6.3 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2013 </td>
    <td style="text-align:right;width: 2cm; "> 33 </td>
-   <td style="text-align:right;width: 2cm; "> 10.6 </td>
+   <td style="text-align:right;width: 2cm; "> 11.0 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2014 </td>
    <td style="text-align:right;width: 2cm; "> 25 </td>
-   <td style="text-align:right;width: 2cm; "> 8.1 </td>
+   <td style="text-align:right;width: 2cm; "> 8.3 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2015 </td>
    <td style="text-align:right;width: 2cm; "> 57 </td>
-   <td style="text-align:right;width: 2cm; "> 18.4 </td>
+   <td style="text-align:right;width: 2cm; "> 19.0 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2016 </td>
    <td style="text-align:right;width: 2cm; "> 60 </td>
-   <td style="text-align:right;width: 2cm; "> 19.4 </td>
+   <td style="text-align:right;width: 2cm; "> 20.0 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2017 </td>
    <td style="text-align:right;width: 2cm; "> 70 </td>
-   <td style="text-align:right;width: 2cm; "> 22.6 </td>
+   <td style="text-align:right;width: 2cm; "> 23.3 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 36 </td>
-   <td style="text-align:right;width: 2cm; "> 11.6 </td>
+   <td style="text-align:right;width: 2cm; "> 26 </td>
+   <td style="text-align:right;width: 2cm; "> 8.7 </td>
   </tr>
-  <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>IGT - Total Reviews: 877</strong></td></tr>
+  <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>IGT - Total Reviews: 876</strong></td></tr>
 <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2008 </td>
    <td style="text-align:right;width: 2cm; "> 3 </td>
@@ -127,8 +127,8 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2011 </td>
-   <td style="text-align:right;width: 2cm; "> 46 </td>
-   <td style="text-align:right;width: 2cm; "> 5.2 </td>
+   <td style="text-align:right;width: 2cm; "> 45 </td>
+   <td style="text-align:right;width: 2cm; "> 5.1 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2012 </td>
@@ -157,15 +157,15 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2017 </td>
-   <td style="text-align:right;width: 2cm; "> 149 </td>
-   <td style="text-align:right;width: 2cm; "> 17.0 </td>
+   <td style="text-align:right;width: 2cm; "> 148 </td>
+   <td style="text-align:right;width: 2cm; "> 16.9 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 63 </td>
-   <td style="text-align:right;width: 2cm; "> 7.2 </td>
+   <td style="text-align:right;width: 2cm; "> 64 </td>
+   <td style="text-align:right;width: 2cm; "> 7.3 </td>
   </tr>
-  <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>Scientific Games - Total Reviews: 372</strong></td></tr>
+  <tr grouplength="11"><td colspan="3" style="border-bottom: 1px solid;"><strong>Scientific Games - Total Reviews: 375</strong></td></tr>
 <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2008 </td>
    <td style="text-align:right;width: 2cm; "> 2 </td>
@@ -173,8 +173,8 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2009 </td>
-   <td style="text-align:right;width: 2cm; "> 3 </td>
-   <td style="text-align:right;width: 2cm; "> 0.8 </td>
+   <td style="text-align:right;width: 2cm; "> 2 </td>
+   <td style="text-align:right;width: 2cm; "> 0.5 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2010 </td>
@@ -193,8 +193,8 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2013 </td>
-   <td style="text-align:right;width: 2cm; "> 6 </td>
-   <td style="text-align:right;width: 2cm; "> 1.6 </td>
+   <td style="text-align:right;width: 2cm; "> 7 </td>
+   <td style="text-align:right;width: 2cm; "> 1.9 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2014 </td>
@@ -204,22 +204,22 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2015 </td>
    <td style="text-align:right;width: 2cm; "> 55 </td>
-   <td style="text-align:right;width: 2cm; "> 14.8 </td>
+   <td style="text-align:right;width: 2cm; "> 14.7 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2016 </td>
    <td style="text-align:right;width: 2cm; "> 81 </td>
-   <td style="text-align:right;width: 2cm; "> 21.8 </td>
+   <td style="text-align:right;width: 2cm; "> 21.6 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2017 </td>
    <td style="text-align:right;width: 2cm; "> 121 </td>
-   <td style="text-align:right;width: 2cm; "> 32.5 </td>
+   <td style="text-align:right;width: 2cm; "> 32.3 </td>
   </tr>
   <tr>
    <td style="text-align:right;width: 3cm;  padding-left: 2em;" indentlevel="1"> 2018 </td>
-   <td style="text-align:right;width: 2cm; "> 71 </td>
-   <td style="text-align:right;width: 2cm; "> 19.1 </td>
+   <td style="text-align:right;width: 2cm; "> 74 </td>
+   <td style="text-align:right;width: 2cm; "> 19.7 </td>
   </tr>
 </tbody>
 </table>
@@ -237,28 +237,28 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Aristocrat</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Not Given </td>
-   <td style="text-align:right;width: 2cm; "> 92 </td>
+   <td style="text-align:right;width: 2cm; "> 89 </td>
    <td style="text-align:right;width: 2cm; "> 29.7 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Noida (India) </td>
-   <td style="text-align:right;width: 2cm; "> 81 </td>
-   <td style="text-align:right;width: 2cm; "> 26.1 </td>
+   <td style="text-align:right;width: 2cm; "> 78 </td>
+   <td style="text-align:right;width: 2cm; "> 26.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Las Vegas, NV </td>
-   <td style="text-align:right;width: 2cm; "> 77 </td>
-   <td style="text-align:right;width: 2cm; "> 24.8 </td>
+   <td style="text-align:right;width: 2cm; "> 75 </td>
+   <td style="text-align:right;width: 2cm; "> 25.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Sydney (Australia) </td>
    <td style="text-align:right;width: 2cm; "> 24 </td>
-   <td style="text-align:right;width: 2cm; "> 7.7 </td>
+   <td style="text-align:right;width: 2cm; "> 8.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> North Ryde (Australia) </td>
-   <td style="text-align:right;width: 2cm; "> 13 </td>
-   <td style="text-align:right;width: 2cm; "> 4.2 </td>
+   <td style="text-align:right;width: 2cm; "> 11 </td>
+   <td style="text-align:right;width: 2cm; "> 3.7 </td>
   </tr>
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>IGT</strong></td></tr>
 <tr>
@@ -274,12 +274,12 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Las Vegas, NV </td>
    <td style="text-align:right;width: 2cm; "> 110 </td>
-   <td style="text-align:right;width: 2cm; "> 12.5 </td>
+   <td style="text-align:right;width: 2cm; "> 12.6 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Providence, RI </td>
-   <td style="text-align:right;width: 2cm; "> 31 </td>
-   <td style="text-align:right;width: 2cm; "> 3.5 </td>
+   <td style="text-align:right;width: 2cm; "> 30 </td>
+   <td style="text-align:right;width: 2cm; "> 3.4 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Austin, TX </td>
@@ -289,23 +289,23 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Scientific Games</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Not Given </td>
-   <td style="text-align:right;width: 2cm; "> 155 </td>
-   <td style="text-align:right;width: 2cm; "> 41.7 </td>
+   <td style="text-align:right;width: 2cm; "> 156 </td>
+   <td style="text-align:right;width: 2cm; "> 41.6 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Alpharetta, GA </td>
    <td style="text-align:right;width: 2cm; "> 40 </td>
-   <td style="text-align:right;width: 2cm; "> 10.8 </td>
+   <td style="text-align:right;width: 2cm; "> 10.7 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Chicago, IL </td>
    <td style="text-align:right;width: 2cm; "> 39 </td>
-   <td style="text-align:right;width: 2cm; "> 10.5 </td>
+   <td style="text-align:right;width: 2cm; "> 10.4 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Bengaluru (India) </td>
    <td style="text-align:right;width: 2cm; "> 33 </td>
-   <td style="text-align:right;width: 2cm; "> 8.9 </td>
+   <td style="text-align:right;width: 2cm; "> 8.8 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Las Vegas, NV </td>
@@ -330,18 +330,18 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Aristocrat</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 151 </td>
+   <td style="text-align:right;width: 2cm; "> 146 </td>
    <td style="text-align:right;width: 2cm; "> 48.7 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Senior Software Engineer </td>
-   <td style="text-align:right;width: 2cm; "> 18 </td>
-   <td style="text-align:right;width: 2cm; "> 5.8 </td>
+   <td style="text-align:right;width: 2cm; "> 17 </td>
+   <td style="text-align:right;width: 2cm; "> 5.7 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Software Engineer </td>
    <td style="text-align:right;width: 2cm; "> 10 </td>
-   <td style="text-align:right;width: 2cm; "> 3.2 </td>
+   <td style="text-align:right;width: 2cm; "> 3.3 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Director </td>
@@ -350,19 +350,19 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Team Lead </td>
-   <td style="text-align:right;width: 2cm; "> 7 </td>
-   <td style="text-align:right;width: 2cm; "> 2.3 </td>
+   <td style="text-align:right;width: 2cm; "> 6 </td>
+   <td style="text-align:right;width: 2cm; "> 2.0 </td>
   </tr>
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>IGT</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 431 </td>
-   <td style="text-align:right;width: 2cm; "> 49.1 </td>
+   <td style="text-align:right;width: 2cm; "> 432 </td>
+   <td style="text-align:right;width: 2cm; "> 49.3 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Software Engineer </td>
    <td style="text-align:right;width: 2cm; "> 46 </td>
-   <td style="text-align:right;width: 2cm; "> 5.2 </td>
+   <td style="text-align:right;width: 2cm; "> 5.3 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Senior Software Engineer </td>
@@ -382,18 +382,18 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr grouplength="5"><td colspan="3" style="border-bottom: 1px solid;"><strong>Scientific Games</strong></td></tr>
 <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Anonymous Employee </td>
-   <td style="text-align:right;width: 2cm; "> 203 </td>
-   <td style="text-align:right;width: 2cm; "> 54.6 </td>
+   <td style="text-align:right;width: 2cm; "> 205 </td>
+   <td style="text-align:right;width: 2cm; "> 54.7 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Software Engineer </td>
    <td style="text-align:right;width: 2cm; "> 23 </td>
-   <td style="text-align:right;width: 2cm; "> 6.2 </td>
+   <td style="text-align:right;width: 2cm; "> 6.1 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Manager </td>
    <td style="text-align:right;width: 2cm; "> 8 </td>
-   <td style="text-align:right;width: 2cm; "> 2.2 </td>
+   <td style="text-align:right;width: 2cm; "> 2.1 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Computer Operator </td>
@@ -402,8 +402,8 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   </tr>
   <tr>
    <td style="text-align:left;width: 5cm;  padding-left: 2em;" indentlevel="1"> Senior Software Engineer </td>
-   <td style="text-align:right;width: 2cm; "> 6 </td>
-   <td style="text-align:right;width: 2cm; "> 1.6 </td>
+   <td style="text-align:right;width: 2cm; "> 7 </td>
+   <td style="text-align:right;width: 2cm; "> 1.9 </td>
   </tr>
 </tbody>
 <tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
@@ -430,8 +430,8 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
 <tbody>
   <tr>
    <td style="text-align:center;font-weight: bold;color: black;"> Aristocrat </td>
-   <td style="text-align:center;"> 3.4 </td>
-   <td style="text-align:center;"> 2.8 </td>
+   <td style="text-align:center;"> 3.5 </td>
+   <td style="text-align:center;"> 2.9 </td>
    <td style="text-align:center;"> 3.4 </td>
    <td style="text-align:center;"> 3.7 </td>
    <td style="text-align:center;"> 3.2 </td>
@@ -449,10 +449,10 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
   <tr>
    <td style="text-align:center;font-weight: bold;color: black;"> Scientific Games </td>
    <td style="text-align:center;"> 3.0 </td>
+   <td style="text-align:center;"> 2.5 </td>
+   <td style="text-align:center;"> 3.1 </td>
+   <td style="text-align:center;"> 3.0 </td>
    <td style="text-align:center;"> 2.6 </td>
-   <td style="text-align:center;"> 3.1 </td>
-   <td style="text-align:center;"> 3.1 </td>
-   <td style="text-align:center;"> 2.7 </td>
    <td style="text-align:center;font-weight: bold;"> 3.1 </td>
   </tr>
 </tbody>
@@ -498,30 +498,30 @@ To date, over 1,500 reviews total have been posted among the three companies. Ea
 <tbody>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Aristocrat </td>
-   <td style="text-align:right;"> -36 </td>
-   <td style="text-align:right;"> -7 </td>
-   <td style="text-align:right;"> -3 </td>
-   <td style="text-align:right;"> -3.74 </td>
+   <td style="text-align:right;"> -16 </td>
+   <td style="text-align:right;"> -2 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> -0.9 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> IGT </td>
-   <td style="text-align:right;"> -36 </td>
-   <td style="text-align:right;"> -4 </td>
+   <td style="text-align:right;"> -33 </td>
+   <td style="text-align:right;"> -2 </td>
    <td style="text-align:right;"> -1 </td>
-   <td style="text-align:right;"> -2.09 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> -1.3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Scientific Games </td>
-   <td style="text-align:right;"> -36 </td>
-   <td style="text-align:right;"> -7 </td>
-   <td style="text-align:right;"> -3 </td>
-   <td style="text-align:right;"> -3.80 </td>
+   <td style="text-align:right;"> -28 </td>
+   <td style="text-align:right;"> -2 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> -1.2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 10 </td>
   </tr>
 </tbody>
 </table>
