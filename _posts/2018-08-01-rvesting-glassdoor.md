@@ -25,7 +25,7 @@ Most things on the web can be scraped actually and there's many methods to do so
 **Text Scraping Demo**
 
 Let's say we want to scrape text data from the company reviews for Tesla. The URL is:  
-[teslaurl](https://www.glassdoor.com/Reviews/Tesla-Reviews-E43129.htm)
+[https://www.glassdoor.com/Reviews/Tesla-Reviews-E43129.htm](https://www.glassdoor.com/Reviews/Tesla-Reviews-E43129.htm)
 
 Tesla has nearly 1,500 total reviews, so with 10 reviews per results page, we'll be scraping across ~150 web pages for the following:
 
@@ -54,7 +54,7 @@ Here's a snippet of the HTML code that generates the Glassdoor page from the scr
 
 We see that the code contains the **Summary** text "Engineer", along with its tags (indicated by the angle brackets). The tag's attributes are specified by `<...class=reviewLink.><span class= "summary ">&#034;Engineer&#034;</span>`, where the particular `<span>` tag has a class attribute with a value of `summary` nested within another class attribute of `reviewLink`. 
 
-I just confused myself honestly. Luckily I can rely on the [SelectorGadget](https://selectorgadget.com) tool to identify the CSS class names for me. This tool compliments the use of the `rvest` package and both are created by R expert Hadley Wickam. Using these two allowed me to perform the web scraping in R. Make sure to check out how they work together [here](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) because it will do a better job at explaining this process. Go ahead!
+I just confused myself honestly. Luckily, I can rely on the [SelectorGadget](https://selectorgadget.com) tool to identify the CSS class names for me. This tool compliments the use of the `rvest` package and both are created by R expert Hadley Wickam. Using these two allowed me to perform the web scraping in R. Make sure to check out how they work together [here](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) because it will do a better job at explaining this process. Go ahead!
 
 ![](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-08-01_files/gd-cat.gif)
 
