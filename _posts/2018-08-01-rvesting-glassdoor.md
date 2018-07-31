@@ -10,27 +10,20 @@ output:
 hidden: true
 ---
 
-_It's officially August and growing season is at its peak in the Southwest U.S. Harvesting is at full swing and there's so much produce available and on sale here. :)  Data is abundant year round of course, and I'll demo ha'rvesting company reviews from the Glassdoor website by scraping the text data in R using `rvest`._
+_It's officially August and growing season is at its peak in the Southwest U.S. Harvesting is in full swing and there's so much produce available and on sale right now. Data is abundant year round, however and with the potential of webscraping, the only real limitation is being able to access the information online. For this post, I'll demo ha'rvesting company reviews from the Glassdoor website by scraping the text data in R using `rvest`._
 
+=======
 
-Analysts like to look out for interesting datasets as they browse the web. If we're lucky, it's neatly packaged and ready for download, but that is hardly ever the case. HTML is in an unstructured format and no one wants to manually "copy and paste" into a spreadsheet to gather the data. I admit I've done this plenty of times before...
+Analysts like to look out for interesting datasets as they browse the web. If we're lucky, it's neatly packaged and ready for download, but that is hardly ever the case. HTML is in an unstructured format and no one wants to manually "copy and paste" into a spreadsheet to gather the data. I admit I've done this plenty of times before...and I hope not to ever have to again. 
 
-&nbsp;  
-&nbsp;
-
-![](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-08-01_files/gd-dog.gif)
-
-&nbsp;  
-&nbsp;
-
-...and I hope not to ever have to again. Enter web scraping, a technique of automatically mining information from a website and an efficient way to build your own dataset that doesn't involve cramped fingers. I think all skilled data analysts should have some scraping capabilities in their toolbox because with it comes so many possibilities in harvesting an abundance of data from the wide open spaces of the World Wide Web!
+Enter web scraping, a technique of automatically mining information from a website. It's an efficient way to build your own dataset that doesn't involve cramping your fingers. I think all skilled data analysts should have some scraping tools because there's so many possibilities in harvesting an abundance of data from the wide open spaces of the Internet.
 
 Most things on the web can be scraped actually and there's many methods to do so, but did you know R has these capabilities? Better yet, the popular `rvest` package makes the process easy through an HTML parsing method. I've had a few folks ask me how I've done this using R. Having applied it recently to Glassdoor, I'll demo that site as an example.
 
-Let's say we want to scrape text data from the company reviews for Tesla. The URL will be:  
+Let's say we want to scrape text data from the company reviews for Tesla. The URL is:  
 https://www.glassdoor.com/Reviews/Tesla-Reviews-E43129.htm. 
 
-Tesla has nearly 1,500 total reviews, so with 10 reviews per results page, we'll be scraping across ~150 web pages for the following various text data:
+Tesla has nearly 1,500 total reviews, so with 10 reviews per results page, we'll be scraping across ~150 web pages for the following:
 
 **Date** - of when review was posted  
 **Summary** - e.g., "Engineer"  
@@ -39,19 +32,13 @@ Tesla has nearly 1,500 total reviews, so with 10 reviews per results page, we'll
 **Cons** - downsides of the workplace  
 **Helpful** - number marked as being helpful, if any
 
-&nbsp;  
-&nbsp;
-
 <center>
 
 ![](https://raw.githubusercontent.com/mguideng/rvest-scrape-glassdoor/master/images/gd-tesla.PNG)
 
 </center>
 
-&nbsp;  
-&nbsp;
-
-With a few lines of code to from the `rvest` package, we can get these text data into a table:
+With a few lines of code from the `rvest` package, we can get these text data into a table:
 
 
 ```r
