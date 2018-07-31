@@ -16,13 +16,13 @@ _It's officially August and growing season is at its peak in the Southwest U.S. 
 
 Analysts like to look out for interesting datasets as they browse the web. If we're lucky, it's neatly packaged and ready for download, but that is hardly ever the case. HTML is in an unstructured format and no one wants to manually "copy and paste" into a spreadsheet to gather the data. I admit I've done this plenty of times before...and I hope not to ever have to again. 
 
-###Enter web scraping
+**Enter web scraping**
 
 Web scraping is a technique of automatically mining information from a website. It's a way to build your own dataset that doesn't involve cramping your fingers. I think all skilled data analysts should have some scraping tools because there's so many possibilities in harvesting an abundance of data from the wide open spaces of the Internet.
 
 Most things on the web can be scraped actually and there's many methods to do so, but did you know R has these capabilities? Better yet, the popular `rvest` package makes the process easy through an HTML parsing method. I've had a few folks ask me how I've done this using R. Having applied it recently to Glassdoor, I'll demo that site as an example.
 
-###Text Scraping Demo
+**Text Scraping Demo**
 
 Let's say we want to scrape text data from the company reviews for Tesla. The URL is:  
 [teslaurl](https://www.glassdoor.com/Reviews/Tesla-Reviews-E43129.htm)
@@ -44,7 +44,7 @@ With a few lines of code from the `rvest` package, we can get these text data in
 
 Whoa. One moment, I was data-less and then a few minutes later, a table just appeared! We now have a dataframe with 1,460 rows, one for each reviewer, that can be exported to a CSV file. What just happened here? Is this magic? 
 
-###Nope, it's `rvest`!
+**Nope, it's `rvest`!**
 
 To scrape the data, I first needed to identify the right HTML elements to select. The important thing to understand is that HTML consists of text and its tags, where tags have class attributes. By selecting certain tagged elements of a web page based on its attributes, you can then extract (or parse) the text contents of interest.
 
@@ -85,7 +85,7 @@ I used the `map_dfr` function from the `purr` package to bind together the rows 
 
 <script src="https://gist.github.com/mguideng/1c9af5d66d7b05e53151101242767f64.js"></script>
 
-###Alas, here's the final output
+**Alas, here's the final output**
 
 ![](https://raw.githubusercontent.com/mguideng/rvest-scrape-glassdoor/master/images/tesla-df-output.PNG)
 
