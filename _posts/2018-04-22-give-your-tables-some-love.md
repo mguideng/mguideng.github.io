@@ -16,7 +16,11 @@ This is the basic HTML table in `kable`:
 And here's the makeover after some formatting help from `kableExtra`.
 ![](/img/after.PNG)
 
-It's a nice bundle of functions. It's one that is easy to use and easy to understand; thus, it should be popular for those looking to keep the simplicity of the [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_tables.asp) table style while adding flexible customization. It's better suited for model-output documents and statistical result-type tables, rather than for fully leveraging on the power of visualization to help interpret the data.
+=======
+
+**Learning points**
+
+* It's a nice bundle of functions. It's one that is easy to use and easy to understand; thus, it should be popular for those looking to keep the simplicity of the [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_tables.asp) table style while adding flexible customization. It's better suited for model-output documents and statistical result-type tables, rather than for fully leveraging on the power of visualization to help interpret the data.
 
 
 <div id="disqus_thread"></div>
