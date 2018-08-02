@@ -610,6 +610,7 @@ So I'll leave you to consider these results and encourage you to look into the m
 * Packages used: tidytext, tidyverse (includes: dplyr, ggplot2, stringr, tidyr), rvest, purr and kableExtra.  
 * Inspired by [this post](https://juliasilge.com/blog/tidytext-0-1-4/) from Julia Silge, co-creator of the tidytext package.
 
+
 <div id="disqus_thread"></div>
 <script>
 
@@ -630,5 +631,3 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
