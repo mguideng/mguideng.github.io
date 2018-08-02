@@ -7,6 +7,7 @@ tags: [r-project, tableau, site-selection, nevada, economic-development, workfor
 output: 
   html_document: 
     keep_md: yes
+comments: true
 ---
 
 With the U.S. economy and many others globally being in better shape than they were a few years ago, companies are expanding and selecting those regions where it can grow and prosper. While one company assesses potential regions based on the labor force, ease of regulatory procedures, land availability and utility costs, another company with similar project specifications may focus on logistical speed and reliability, and therefore looks at transportation infrastructures and supply chain linkages to its suppliers and targeted customers. While the site selection criteria can be very specific depending on each company's unique needs and drivers, these represent some of the more common ones that influence the site location decision.
@@ -120,3 +121,27 @@ The process for this project was the usual "turn data into information, then inf
 
 **Data source:** [My GitHub](https://github.com/mguideng), repo: "stringmatch-siteselect-nv"  
 **Information:** [My PublicTableau](https://public.tableau.com/profile/maria.guideng#!), viz: "Nevada Site Selection Factors Survey"
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mguideng-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
