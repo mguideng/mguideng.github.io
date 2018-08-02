@@ -8,6 +8,7 @@ output:
   html_document: 
     keep_md: yes
 hidden: false
+comments: true
 ---
 
 _It's officially August and growing season is at its peak in the Southwest U.S. With harvesting in full swing, there's so much produce available and on sale right now. You know what's freely abundant year round? Data! And with the potential of web scraping, the only real limitation is being able to access the information online. For this post, I'll demo ha'rvesting company reviews from the Glassdoor website by scraping text data in R using `rvest`. Go straight [here](https://github.com/mguideng/rvest-scrape-glassdoor) if you're looking for the R file._
@@ -50,7 +51,7 @@ Whoa. What's going on here?
 One moment, I was data-less, and then 152 *booms! later - a table appeared. We now have a dataframe with 1,511 rows - one for each reviewer - that can be exported to a CSV file. Is this some sort of magic?? 
 
 ### Nope, it's `rvest`!  
-Before we go over what `rvest` is doing, we've to got figure out:  
+Before we go over what `rvest` is doing, we've got to figure out:  
  1. how the data can be accessed, and  
  2. how the data is structured.
 
@@ -98,7 +99,7 @@ Ok, so here are the CSS `class` and `id` descriptions for the variables:
 ### Back on track to `rvest`  
 Now that these are identified, we can take a look at how they were used with the functions in `rvest`: 
 
-* `read_html()`: returns an HTML document from the glassdoor.com URL by converting it into an XML object. Think of the HTML document as if it were a bunch of node objects representing the document's contents. It's stored as `'pg'` in R's environment.
+* `read_html()`: returns an HTML document from the glassdoor.com URL by converting it into an XML object. This is how the data is accessed. Think of the HTML document as if it were a bunch of node objects representing the document's contents. It defines `'pg'` in the R code gist.
 * `html_nodes()`: selects parts of the XML object based on the CSS selectors we identified. The stored results (e.g., `'rev.date'`, `'rev.sum'`, `'rev.title'`) will be lists of the node objects and their tagged attributes.
 * `html_text()`: extracts only the text portion from the tagged nodes.
 
@@ -134,8 +135,30 @@ Since most of this text information is character data, rather than numerical or 
 
 * [Scraping guidelines and best practices](https://gist.github.com/abelsonlive/3769469) includes not hitting the servers too frequently. I haven't considered this before, and it's a good point. Not only do I not want my scraper booted, it's also not polite to bombard web servers with hundreds/thousands of immediately sequential requests. Here, I ran a loop for 152 iterations, and in each iteration, the system was set to sleep for 5 seconds. For a well-behaved bot, I would suggest allowing 2 seconds minimum (or 5 seconds ideally) between each page request.
 
-* Going the API route involves registering with a site administrator to get a key and to make requests using that key. Depending on my specific needs, an API may be the better option over writing a scraper that makes HTTP requests. There can be reasons, however, why an API is not sufficient for your needs. Aside from lack of availability, what other reasons might one opt to bypass it? Consider the following scenarios: 
+* Going the API route usually involves registering with a site administrator to get a key and to make requests using that key. Depending on my specific needs, an API may be the better option over writing a scraper that makes HTTP requests. There can be reasons, however, why an API is not sufficient for your needs. Aside from lack of availability, what other reasons might one opt to bypass it? Consider the following scenarios: 
 	+ The API available may not be as up-to-date as the visitor webpage itself and you are depending on current data; 
 	+ Rate limits are more restrictive than your (polite) web scraper and you don't want to be subject to them;
 	+ You simply want to gather data privately while remaining anonymous; or
 	+ Just because it's a project you've been wanting to do. In that case, happy ha'rvesting!
+
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mguideng-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
