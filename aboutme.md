@@ -15,10 +15,15 @@ My name is Maria and I enjoy learning new things. This website was created as a 
 Studied [Economics](https://www.unlv.edu/economics). Over 10 years of experience in data-driven decision-making. On sabbatical. Previously worked as an [analyst](http://www.diversifynevada.com), and a [consultant](http://www.rcg1.com) prior.
 
 Thanks for stopping by. For feedback, inquiries, or grabbing a coffee:   
-imlearningthethings [at] gmail
+### imlearningthethings [at] gmail
+<br/>
+<br/>
+<br/>
+<br/>
 
 ![](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/handstand.gif)   
-_Learning handstands_
+_Learning handstands @ Wheeler   
+Peak grove (Great Basin, NV)_
 
 
 
