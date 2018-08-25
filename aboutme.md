@@ -12,7 +12,7 @@ subtitle: '# A tibble: about_me'
 
 My name is Maria and I enjoy learning new things. This website was created as a way for me to learn openly by sharing my work on side projects. This includes writing about analytics and occasional tangents on anything which gets my attention. Learning openly is a process of sharing our experiences; putting our work out there opens it up to receiving feedback and provides examples that can help others make sense of their own creative processes.
 
-Studied [Economics](https://www.unlv.edu/economics). Over 10 years of experience in data-driven decision-making. On sabbatical. Previously worked as an [analyst](http://www.diversifynevada.com), and a [consultant](http://www.rcg1.com) prior.
+On sabbatical. Over 10 years of experience in analyzing data and helping to guide business decisions: previously worked as an [Analyst](http://www.diversifynevada.com), and a [Consultant](http://www.rcg1.com) prior. Studied [Economics](https://www.unlv.edu/economics).
 
 Thanks for stopping by. For feedback, inquiries, or grabbing a coffee:   
 ### imlearningthethings [at] gmail
