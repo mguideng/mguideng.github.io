@@ -1,8 +1,8 @@
-﻿---
+---
 layout: post
-title: Part One Chocolate & Machine Learning with Python
+title: Part One of Chocolate & Machine Learning with Python
 subtitle: Bittersweet Exploration through Data Preparation
-bigimg: /img/2018-10-13_files/p1 cacaopods.jpg
+bigimg: /img/2018-10-13_files/p1_cacaopods.jpg
 tags: [py-project, chocolate, ratings, data-preparation]
 hidden: false
 comments: true
@@ -126,12 +126,11 @@ plt.title('Ratings Distribution')
 
 
 
-    Text(0.5,1,'Ratings Distribution')
 
 
 
 
-![png](output_7_1.png)
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_7_1.png)
 
 
 Summary stats are shown below. The average rating is 3.2, intrepreted to be “satisfactory” by this group. A standard deviation of just 0.5 captures a narrow range (2.70 and 3.70) between the min (1.0) and max (4.0) where scores are clustered closely to the average. 
@@ -452,7 +451,6 @@ plt.title('Boxplot: Rating by Chocolate Style')
 
 
 
-    Text(0.5,1,'Boxplot: Rating by Chocolate Style')
 
 
 
