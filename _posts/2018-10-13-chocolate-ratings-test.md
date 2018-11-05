@@ -1,29 +1,16 @@
 ---
 layout: post
-
 title: Part One of Chocolate & Machine Learning with Python
-
 subtitle: Bittersweet Exploration through Data Preparation
-
 bigimg: /img/2018-10-13_files/p1_cacaopods.jpg
-
 tags: [py-project, chocolate, ratings, data-preparation]
-
 hidden: false
-
 comments: true
-
 ---
-
-
 
 _This is part one of a two-part series where we’ll get a high-level overview of a chocolate dataset and prepare it for a predictive model. It will be just as much about exploring chocolate as it is about cleaning and conditioning data, so if you also have a sweet tooth, I hope you’ll find this to be a treat._
 
-
-
 =======
-
-
 
 Anyone who knows me knows I’m a chocoholic. Every October, I get a serious stash of chocolates, courtesy of friends and family who indulge me for my birthday. While munching on a piece of dark chocolate with banana bits a few nights ago, I wondered whether there was a chocolate dataset with ratings available. I doubted it. How can something as subjective as chocolate preferences be summarized into a dataset? A quick google search later, I was happy to see that there was one available via [Kaggle](https://www.kaggle.com/rtatman/chocolate-bar-ratings). The data was a bit dated and I wanted the latest, but I couldn’t figure out how to web scrape it from the source directly with R’s `rvest` package. I decided that _this_ would be the time to pick up the Python programming language, known to have better web scraping capabilities than R. After [scraping the dataset](https://github.com/mguideng/flavorsofcacao) into a CSV file, I figured, “Why stop there? I want a machine learning system that will tell me which chocolates will receive the high ratings.” Hence, this. See what happens when you give me some chocolate? I’m going to ask for a predictive chocolate rating algorithm.
 
@@ -34,8 +21,6 @@ Before any actual model building to solve this “problem” can happen, we have
 <h1 align="center">Bittersweet Exploration through Data Preparation</h1> 
 
 We’ll get to know the dataset by going through each variable one by one. The tasks in mind for Part One are three-fold: 1) learn about chocolates; 2) clean and condition the data to fit into a supervised learning algorithm; and 3) formulate a problem framework.
-
-
 
 ### About the dataset    
 The data is from [flavorsofcacao.com](http://flavorsofcacao.com/chocolate_database.html) and compiled by the Manhattan Chocolate Society, a group of members that has organized nearly 70 chocolate tasting events for themselves since 2007. The focus is on plain dark craft/fine chocolates and includes over 19,000 different ones. According to the website and review guide, each chocolate’s quality rating is evaluated from a combination of both objective qualities (e.g., flavor, texture, and aftermelt) and subjective interpretation including impressions on flavor development, character, and style. 
@@ -51,8 +36,6 @@ Here’s their rating system, which ranges from 1 through 5 with increments of 0
 * 1 = Unpleasant (mostly unpalatable)
 
 Looking ahead, of interest will be predicting those rated at **3.75** or higher. Aside from quality ratings, there’s information on the company names and their country locations; the origins and types of the cacao bean the chocolates are made from; the percent of cocoa in the ingredients; and the year they were rated. 
-
-
 
 ### Preliminaries    
 The first thing is to import the Python modules needed for reading, processing, and visualizing the data. The scraped dataset is stored in this [Github repo](https://github.com/mguideng/flavorsofcacao), so we’ll bring it in from there and get information about its structure.
@@ -128,9 +111,6 @@ print(df.head(10))
     8  A. Morin  2013   70%   France    3.25      NaN  Papua New Guinea
     9  A. Morin  2013   63%   France    4.00      NaN              Peru
     
-
-
-
 ### Rating    
 The ratings column will be the first to cover. In getting the distribution of rating scores, the first thing I notice is there is not a single 5 rating. How is this possible with nearly 2,000 entries? I’m guessing any 5 ratings were excluded for some reason because its absence entirely is pretty hard to believe. Well, at least for a sucker like me. I’d probably end up rating most a 5.
 
@@ -144,7 +124,6 @@ plt.title('Ratings Distribution')
 
 
 
-    Text(0.5,1,'Ratings Distribution')
 
 
 
@@ -474,7 +453,6 @@ plt.title('Boxplot: Rating by Chocolate Style')
 
 
 
-    Text(0.5,1,'Boxplot: Rating by Chocolate Style')
 
 
 
@@ -574,7 +552,6 @@ plt.title('Company Location v. Bean Origin')
 
 
 
-    Text(0.5,1,'Company Location v. Bean Origin')
 
 
 
@@ -714,7 +691,6 @@ plt.title('Boxplot, Rating by Bean Varietial: Known v. Not Specified')
 
 
 
-    Text(0.5,1,'Boxplot, Rating by Bean Varietial: Known v. Not Specified')
 
 
 
@@ -842,7 +818,6 @@ plt.title('Distribution by Year')
 
 
 
-    Text(0.5,1,'Distribution by Year')
 
 
 
@@ -866,7 +841,6 @@ plt.title('Boxplot: Rating by Year')
 
 
 
-    Text(0.5,1,'Boxplot: Rating by Year')
 
 
 
