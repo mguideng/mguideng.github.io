@@ -43,33 +43,33 @@ The first thing is to import the Python modules needed for reading, processing, 
 
 
 ```python
-import pandas as pd
-pd.set_option('display.expand_frame_repr', False)     # Widen output display
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-%matplotlib inline 
-import warnings
-warnings.simplefilter('ignore')
+ import pandas as pd
+ pd.set_option('display.expand_frame_repr', False)     # Widen output display
+ import numpy as np
+ import seaborn as sns
+ import matplotlib.pyplot as plt
+ %matplotlib inline 
+ import warnings
+ warnings.simplefilter('ignore')
 
-df = pd.io.parsers.read_csv('https://raw.githubusercontent.com/mguideng/flavorsofcacao/master/data/raw_df.csv')
-df.info()
+ df = pd.io.parsers.read_csv('https://raw.githubusercontent.com/mguideng/flavorsofcacao/master/data/raw_df.csv')
+ df.info()
 ```
 
-    <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 1937 entries, 0 to 1936
-    Data columns (total 9 columns):
-    Company (Maker-if known)            1937 non-null object
-    Specific Bean Origin or Bar Name    1937 non-null object
-    REF                                 1937 non-null int64
-    Review Date                         1937 non-null int64
-    Cocoa Percent                       1937 non-null object
-    Company Location                    1937 non-null object
-    Rating                              1937 non-null float64
-    Bean Type                           924 non-null object
-    Broad Bean Origin                   1865 non-null object
-    dtypes: float64(1), int64(2), object(6)
-    memory usage: 136.3+ KB
+     <class 'pandas.core.frame.DataFrame'>
+     RangeIndex: 1937 entries, 0 to 1936
+     Data columns (total 9 columns):
+     Company (Maker-if known)            1937 non-null object
+     Specific Bean Origin or Bar Name    1937 non-null object
+     REF                                 1937 non-null int64
+     Review Date                         1937 non-null int64
+     Cocoa Percent                       1937 non-null object
+     Company Location                    1937 non-null object
+     Rating                              1937 non-null float64
+     Bean Type                           924 non-null object
+     Broad Bean Origin                   1865 non-null object
+     dtypes: float64(1), int64(2), object(6)
+     memory usage: 136.3+ KB
     
 
 It’s a small size consisting of 1,937 rows, each representing a unique chocolate bar, and nine columns, of which two have nulls. 
