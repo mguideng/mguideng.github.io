@@ -8,8 +8,9 @@ layout: base
   {{ content }}
 </div>
 
-<head>
-    <!-- Begin section for dataframe table formatting -->
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
+  {% include head.html %}
+  <!-- Begin section for dataframe table formatting -->
     <style type="text/css">
     table.dataframe {
         width: 100%;
@@ -33,4 +34,3 @@ layout: base
     }
     </style>
     <!-- End section for dataframe table formatting -->
-  </head>
