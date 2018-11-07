@@ -1,14 +1,16 @@
 ---
 layout: post
-title: What's Hello World
+title: What's This
 bigimg: /img/2018-04-21_files/hello-world-banner.jpg
-[tags: newbie, test]
+tags: [newbie, test]
+output: 
+  html_document: 
+    keep_md: yes
 hidden: false
 comments: true
 ---
 
-$ git add _posts/2018-04-21-hello-world.md
-#This is my first post, how exciting.
+This is my first post, how exciting.
 
 =======
 
