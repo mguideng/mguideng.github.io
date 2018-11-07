@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's This
-bigimg: /img/2018-03-07_files/helloworld.jpg
+bigimg: /img/2018-03-07_files/helloworldjekyll.jpg
 tags: [newbie, test]
 output: 
   html_document: 
