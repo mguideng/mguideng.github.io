@@ -895,3 +895,24 @@ This concludes Part One. Are you craving chocolates yet? In Part Two, we’ll go
 * The only variables that would seem to matter to a prediction model would be ones related to the properties of the chocolates: the cocoa percent, bean varietal, and bean origin. It’s not much, but it is an assumption we can apply. Actually, the assumptions we make about the data and its domain is largely reflected in how we choose to process it. It varies widely and it’s neat to see how others working with it on Kaggle make assumptions, both explicitly and not, to drive decisions about their models and methods. The kernals by others have also been a useful source of inspiration.
 
 * It would be a mistake to think of data as being the same as what it is supposed to mean in the anaysis. Remember, the data was generated for a purpose specific to the chocolate tasting group. The reality is, there’s so much more that happens in the production process that affects quality that are not reflected in this dataset. But it would also be a mistake to focus on the limitations of the data we have to work with. If we did, we may not even bother conducting such experiments that are so important to building skillsets, knowledge, and intuition. So forge ahead while staying aware of these limitations and have fun learning along the way!
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mguideng-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
