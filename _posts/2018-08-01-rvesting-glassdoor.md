@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It's Harvesting Season
-subtitle: Scraping Ripe Data
+subtitle: Web Scraping Ripe Data
 bigimg: /img/2018-08-01_files/0berries.jpg
 tags: [r-project, rvest, glassdoor, webscraping]
 output: 
