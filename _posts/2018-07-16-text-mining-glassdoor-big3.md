@@ -11,28 +11,7 @@ comments: true
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-_This post is about applying basic text mining tasks to Glassdoor company reviews to find out what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive or neutral way. Final results are shown as visuals, both tables and graphs._
+_This post is about applying basic text mining tasks to Glassdoor company reviews to find out what employees write the most about to describe their workplace experiences, and whether they tend to be expressed in a more negative, positive or neutral way. Final results are shown as visuals, both tables and graphs. Developed completely in R, the code can be found in my [github](https://github.com/mguideng/text-mining-big3-reviews)._
 
 =======
 
@@ -607,7 +586,6 @@ So I'll leave you to consider these results and encourage you to look into the m
 
 * Learning process included basic exploration and analysis of text to identify patterns, keywords, and other attributes in the data to extract relevant information and then structure the text to derive insights.  
 * Demonstrated web scraping, text analytics, and sentiment analysis on word-level using [tidy data principles](http://r4ds.had.co.nz/tidy-data.html) and using a binary lexicon to classify sentiment words.  
-* Developed completely in R, the code can be found in my [github](https://github.com/mguideng/text-mining-big3-reviews).  
 * Packages used: tidytext, tidyverse (includes: dplyr, ggplot2, stringr, tidyr), rvest, purr and kableExtra.  
 * Inspired by [this post](https://juliasilge.com/blog/tidytext-0-1-4/) from Julia Silge, co-creator of the tidytext package.
 
