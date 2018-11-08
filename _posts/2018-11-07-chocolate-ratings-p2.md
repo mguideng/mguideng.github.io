@@ -1,19 +1,22 @@
-﻿---
+---
 layout: post
-title: Predictive Analytics with (Cocoa) Decision Tree Algorithms
+title: Predictive Analytics with (Cacao) Decision Tree Algorithms
 subtitle: Part Two of Chocolate & Machine Learning with Python
-bigimg: /img/2018-11-07_files/ p2_chocwrapper.jpgtags: [py-project, chocolate, ratings, decision-tree]
+bigimg: /img/2018-11-07_files/p2_chocwrapper.jpg
+tags: [py-project, chocolate, ratings, decision-tree]
 hidden: false
 comments: true
 ---
 
-_This is part two of a two-part series in which I take chocolate nerd-dom to the next level with a dive into chocolate bar rating prediction using Python. After exploring and preparing the chocolate dataset in part one, we’ll apply it to a Decision Tree classifier algorithm and perform some tuning to optimize its predictive performance._
-
-
+_Here's part two of a two-part series in which I take chocolate nerd-dom to the next level with a dive into chocolate bar rating prediction using Python. After exploring and preparing the chocolate dataset in part one, we'll apply it to a Decision Tree classifier algorithm and perform some tuning to optimize its predictive performance._
 
 =======
+
 Forthcoming!
 
+=======
+
+**Learning points**
 
 <div id="disqus_thread"></div>
 <script>
