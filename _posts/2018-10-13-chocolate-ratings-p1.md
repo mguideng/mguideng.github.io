@@ -515,7 +515,7 @@ Overall, the countries can be clustered into the three regions of The Americas, 
 
 
 ```python
-print('Total Origin Countries:', df['origin'].nunique(), '\n----------\nOrigin Countries - Top 20:')
+print('Total Origin Countries:', df['origin'].nunique(), '\n----------\nOrigin Countries - Top 10:')
 print(df['origin'].value_counts().head(10))
 ```
 
@@ -884,7 +884,7 @@ This concludes Part One. Are you craving chocolates yet? In Part Two, we’ll go
 
 **Learning points**
 
-* I didn’t start off in the terminal to “get” Python. I’m using the Anaconda Python distribution to deploy the Sypder (GUI-based) and Jupyter (interactive web-based shell) environments. These seem to work for me, together with getting in the habit of using their keyboard shortcuts early on. 
+* I didn’t start off in the terminal to “get” Python. I’m using the Anaconda Python distribution to deploy the Spyder (GUI-based) and Jupyter (interactive web-based shell) environments. These seem to work for me, together with getting in the habit of using their keyboard shortcuts early on. 
 
 * In learning how I can use Python to apply this project, I’ve opted to focus on certain libraries and modules such as `NumPy` for numerical array computing, `Matplotlib` and `Seaborn` for data visualization, `Scikit-learn` for machine learning, and especially `Pandas` for data manipulation on dataframes (and comparing them to the equivalents in R). While I’ve enjoyed this top-down approach to learning, I have yet to actually develop a foundation for the Python language.
 
