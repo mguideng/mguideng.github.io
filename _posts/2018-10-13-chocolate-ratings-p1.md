@@ -1,11 +1,11 @@
-﻿---
+---
 layout: post
-title: Bittersweet Exploration through Data Preparation
-subtitle: Part One of Chocolate & Machine Learning with Python
+title: Part One of Chocolate & Machine Learning with Python
+subtitle: Bittersweet Exploration through Data Preparation
 bigimg: /img/2018-10-13_files/p1_cacaopods.jpg
 tags: [py-project, chocolate, ratings, data-preparation]
-hidden: false
 comments: true
+hidden: false
 ---
 
 _This is part one of a two-part series where we’ll get a high-level overview of a chocolate dataset and prepare it for a predictive model. It will be just as much about exploring chocolate as it is about cleaning and conditioning data, so if you also have a sweet tooth, I hope you’ll find this to be a treat._
@@ -73,7 +73,14 @@ df.info()
 
 It’s a small size consisting of 1,937 rows, each representing a unique chocolate bar, and nine columns, of which two have nulls. 
 
-_Prep:_ Two columns will be dropped. The first is “Specific Bean Origin or Bar Name”. It’s too varied and is largely duplicated in “Broad Bean Origin”. “REF” will also be dropped. The numbers reference when records were added where higher numbers correspond to more recent entries made to date. It’s basically a time series measure that will be highly correlated to “Review Date.” Lastly, columns will be renamed accordingly for readability:
+_Prep:_ Two columns will be dropped. The first is “Specific Bean Origin or Bar Name”. It’s too varied and is largely duplicated in “Broad Bean Origin”. “REF” will also be dropped. The numbers reference when records were added where higher numbers correspond to more recent entries made to date.
+
+
+```python
+df.drop(['Specific Bean Origin or Bar Name', 'REF'], axis = 1, inplace = True)
+```
+
+It’s basically a time series measure that will be highly correlated to “Review Date.” Lastly, columns will be renamed accordingly for readability:
 
 | Name                     | Rename   |
 |--------------------------|----------|
@@ -87,7 +94,6 @@ _Prep:_ Two columns will be dropped. The first is “Specific Bean Origin or Bar
 
 
 ```python
-df.drop(['Specific Bean Origin or Bar Name', 'REF'], axis = 1, inplace = True)
 newcol = ['company', 'year', 'cocoa', 'location', 'rating', 'type', 'origin']
 df = df.rename(columns = dict(zip(df.columns, newcol)))
 ```
@@ -111,6 +117,7 @@ print(df.head(10))
     8  A. Morin  2013   70%   France    3.25      NaN  Papua New Guinea
     9  A. Morin  2013   63%   France    4.00      NaN              Peru
     
+
 ### Rating    
 The ratings column will be the first to cover. In getting the distribution of rating scores, the first thing I notice is there is not a single 5 rating. How is this possible with nearly 2,000 entries? I’m guessing any 5 ratings were excluded for some reason because its absence entirely is pretty hard to believe. Well, at least for a sucker like me. I’d probably end up rating most a 5.
 
@@ -124,11 +131,12 @@ plt.title('Ratings Distribution')
 
 
 
+    Text(0.5,1,'Ratings Distribution')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_8_1.png)
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_10_1.png)
 
 
 Summary stats are shown below. The average rating is 3.2, intrepreted to be “satisfactory” by this group. A standard deviation of just 0.5 captures a narrow range (2.70 and 3.70) between the min (1.0) and max (4.0) where scores are clustered closely to the average.
@@ -163,8 +171,6 @@ print(df['rating_set'].value_counts())
     1     331
     Name: rating_set, dtype: int64
     
-
-
 
 ### Company Name    
 For this column, we’ll start by getting a list of all names for the companies that manfuctured the chocolates. There's clearly a wide array of them. But where’s the well-loved Hershey Foods Corporation? You won't find it here since the focus is on "fine craft" chocolates. Actually, it’s likely we won’t recognize a majority of these companies. Most mass market chocolates we’re familiar with do not entirely manufacture their own chocolates, a process known as "bean-to-bar". Referred to as chocolate "melters" — rather than "makers" — they purchase chocolate in bulk then flavor, mold, package, and market the finished products. There are also chocolate makers who produce chocolates exclusively for other companies (and not directly to consumers) under “private labels”. It’s also possible that most on this list are artisan chocolate companies that specialize in small-batch production and do not export widely.
@@ -312,19 +318,19 @@ print('Median Chocolates per Company:', df.groupby('company')['company'].count()
     Coppeneur                38
     Valrhona                 32
     Pralus                   30
-    Arete                    29
-    Guittard                 29
     Fresco                   29
+    Guittard                 29
+    Arete                    29
     A Morin                  28
     Domori                   23
     Zotter                   19
     Tulicorp                 19
     Mast Brothers            18
+    Dandelion                17
     Scharffen Berger         17
     Smooth Chocolator The    17
-    Dandelion                17
-    Rogue                    16
     Artisan du Chocolat      16
+    Rogue                    16
     Dick Taylor              15
     Name: company, dtype: int64 
     ----------
@@ -374,8 +380,6 @@ print(df.query('rating_set == 1').groupby('company')['company'].count().sort_val
     Name: company, dtype: int64
     
 
-
-
 ### Company Location    
 I'm guessing this column refers to the country from which a company originated, is headquartered, or where manufacturing sites are located considering that a company can correspond to more than one country. All looks clean and no data prep is needed. Here’s a list of all 59 of them. 
 
@@ -421,8 +425,8 @@ print(df['location'].value_counts().head(15))
     Austria         28
     Venezuela       26
     Spain           26
-    Hungary         23
     Colombia        23
+    Hungary         23
     Name: location, dtype: int64
     
 
@@ -453,13 +457,12 @@ plt.title('Boxplot: Rating by Chocolate Style')
 
 
 
+    Text(0.5,1,'Boxplot: Rating by Chocolate Style')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_26_1.png)
-
-
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_28_1.png)
 
 
 ### Bean Origin    
@@ -521,7 +524,7 @@ print(df['origin'].value_counts().head(10))
 
     Total Origin Countries: 53 
     ----------
-    Origin Countries - Top 20:
+    Origin Countries - Top 10:
     Venezuela             225
     Ecuador               199
     Peru                  177
@@ -552,13 +555,12 @@ plt.title('Company Location v. Bean Origin')
 
 
 
+    Text(0.5,1,'Company Location v. Bean Origin')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_34_1.png)
-
-
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_36_1.png)
 
 
 ### Bean Type    
@@ -691,13 +693,12 @@ plt.title('Boxplot, Rating by Bean Varietial: Known v. Not Specified')
 
 
 
+    Text(0.5,1,'Boxplot, Rating by Bean Varietial: Known v. Not Specified')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_42_1.png)
-
-
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_44_1.png)
 
 
 ### Cocoa Percentage    
@@ -770,14 +771,12 @@ sns.jointplot(x = 'cocoa', y ='rating', data = df, color = '#7C7C7C')
 
 
 
-    <seaborn.axisgrid.JointGrid at 0x1dcb0fe7c50>
+    <seaborn.axisgrid.JointGrid at 0x15a9fd1beb8>
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_50_1.png)
-
-
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_52_1.png)
 
 
 ### Review Year    
@@ -818,11 +817,12 @@ plt.title('Distribution by Year')
 
 
 
+    Text(0.5,1,'Distribution by Year')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_54_1.png)
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_56_1.png)
 
 
 The data is somewhat imbalanced by year, but the data itself is clean and this column won’t require any data preparation. 
@@ -841,16 +841,15 @@ plt.title('Boxplot: Rating by Year')
 
 
 
+    Text(0.5,1,'Boxplot: Rating by Year')
 
 
 
 
-![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_56_1.png)
+![png](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2018-10-13_files/output_58_1.png)
 
 
 This completes the tasks for learning about the chocolates and preparing the data. At this stage, there’s still plenty of unknowns about data relationships, if any, but we’ve distilled enough about the information to proceed with the last task: developing our machine learning problem framework.
-
-
 
 ### Problem Framework    
 Machine learning generally solves two types of problems: regression and classification. The former can be the problem of predicting a _continuous_ value output (the rating number will be 3.00, for example) and the latter can be the problem of predicting a _discrete_ class label output (e.g., yes/no on whether the rating is 3.75 or higher).
