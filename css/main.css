@@ -634,7 +634,7 @@ table {
 table tr {
   border-top: 1px solid #cccccc;
   background-color: #ffffff;
-  margin: 20px;
+  margin: 10px;
   padding: 0;
 }
 table tr:nth-child(2n) {
@@ -644,22 +644,22 @@ table tr th {
   font-weight: bold;
   border: 1px solid #cccccc;
   text-align: left;
-  margin: 0;
+  margin: 10px;
   padding: 6px 13px;
 }
 table tr td {
   border: 1px solid #cccccc;
   text-align: left;
-  margin: 0;
+  margin: 10px;
   padding: 6px 13px;
 }
 table tr th :first-child,
 table tr td :first-child {
-  margin-top: 0;
+  margin-top: 10px;
 }
 table tr th :last-child,
 table tr td :last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 /* --- Code blocks --- */
