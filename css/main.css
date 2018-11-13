@@ -634,7 +634,7 @@ table {
 table tr {
   border-top: 1px solid #cccccc;
   background-color: #ffffff;
-  margin: 0;
+  margin: 20px;
   padding: 0;
 }
 table tr:nth-child(2n) {
