@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: Part One of Chocolate & Machine Learning with Python
 subtitle: Bittersweet Exploration through Data Preparation
@@ -73,25 +73,22 @@ df.info()
 
 It’s a small size consisting of 1,937 rows, each representing a unique chocolate bar, and nine columns, of which two have nulls. 
 
-_Prep:_ Two columns will be dropped. The first is “Specific Bean Origin or Bar Name”. It’s too varied and is largely duplicated in “Broad Bean Origin”. “REF” will also be dropped. The numbers reference when records were added where higher numbers correspond to more recent entries made to date.
+_Prep:_ Two columns will be dropped. The first is “Specific Bean Origin or Bar Name”. It’s too varied and is largely duplicated in “Broad Bean Origin”. “REF” will also be dropped. The numbers reference when records were added where higher numbers correspond to more recent entries made to date. It’s basically a time series measure that will be highly correlated to “Review Date.” 
 
 
 ```python
 df.drop(['Specific Bean Origin or Bar Name', 'REF'], axis = 1, inplace = True)
 ```
 
-It’s basically a time series measure that will be highly correlated to “Review Date.” Lastly, columns will be renamed accordingly for readability:
+Lastly, columns will be renamed accordingly for readability:
 
-| Name                     | Rename   |
-|--------------------------|----------|
-| Company (Maker-if known) | company  |
-| Company Location         | location |
-| Review Date              | year     |
-| Cocoa Percent            | cocoa    |
-| Rating                   | rating   |
-| Bean Type                | type     |
-| Broad Bean Origin        | origin   |
-
+* Company (Maker-if known) = company
+* Company Location = location
+* Review Date = year
+* Cocoa Percent = cocoa
+* Rating = rating
+* Bean Type = type
+* Broad Bean Origin = origin
 
 ```python
 newcol = ['company', 'year', 'cocoa', 'location', 'rating', 'type', 'origin']
