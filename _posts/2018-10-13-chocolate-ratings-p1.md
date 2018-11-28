@@ -1,7 +1,7 @@
 ﻿---
 layout: post
-title: Part One of Chocolate & Machine Learning with Python
-subtitle: Bittersweet Exploration through Data Preparation
+title: Bittersweet Exploration through Data Preparation
+subtitle: Part One of Chocolate & Machine Learning with Python
 bigimg: /img/2018-10-13_files/p1_cacaopods.jpg
 tags: [py-project, chocolate, ratings, data-preparation]
 comments: true
