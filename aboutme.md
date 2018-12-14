@@ -15,8 +15,8 @@ My name is Maria and I enjoy learning new things. This website was created as a 
 On sabbatical. Over 10 years of experience in analyzing data and helping to guide business decisions: previously worked as an [Analyst](http://www.diversifynevada.com), and a [Consultant](http://www.rcg1.com) prior. Studied [Economics](https://www.unlv.edu/economics).
 
 Thanks for stopping by. For feedback, inquiries, or grabbing a coffee:   
-### imlearningthethings [at] gmail
-<br/>
+`imlearningthethings` [at] `gmail
+` <br/>
 <br/>
 <br/>
 <br/>
