@@ -9,6 +9,7 @@ output:
     keep_md: yes
     df_print: default
     self_contained: yes
+    mode: selfcontained
     code_folding: hide
     toc: yes
     toc_depth: 3
@@ -19,7 +20,7 @@ output:
 
 
 
-_This post provides an analysis demo using flights data in **R**. The source data includes information on over 7.2 million scheduled non-stop U.S. domestic flights during 2018. Given the data's large size, the **DBI** package will used to access a **SQLite** database where the data is stored. That way, database queries can be generated outside of **R** without having to bring in the entire dataset as an object._ 
+_This post provides an analysis demo using flights data in **R**. The source data includes information on over 7.2 million scheduled non-stop U.S. domestic flights during 2018. Given the data's large size, the **DBI** package will be used to access a **SQLite** database where the data is stored. That way, database queries can be generated outside of **R** without having to bring in the entire dataset as an object._ 
 
 _To make it even more manageable, the focus will be on my hometown airport: McCarran International Airport (LAS), the main airport servicing the Las Vegas metro area. The queries will summarize flight activity and key on-time performance measures: cancellations and flight delays. Findings will be displayed via tables and charts._
 
@@ -707,8 +708,8 @@ tbl.q6_ontPerform <- datatable(q6_ontPerform.sTbl, options = list(dom = "t"), ro
 tbl.q6_ontPerform
 ```
 
-<!--html_preserve--><div id="htmlwidget-acd63c7923763530c399" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-acd63c7923763530c399">{"x":{"filter":"none","caption":"<caption>Table: Arrival Status to the Top 10 Destinations from LAS<\/caption>","data":[["On-Time (early or &lt; 15 min)","Significant Delay (&gt;= 90 min or cancelled)","Minor Delay (15 - 89 min)"],[49436,2598,9877],[80,4,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Arrival Status<\/th>\n      <th>Total Flights (#)<\/th>\n      <th>Total Flights (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-dfd7a0975e299fc52a55" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dfd7a0975e299fc52a55">{"x":{"filter":"none","caption":"<caption>Table: Arrival Status to the Top 10 Destinations from LAS<\/caption>","data":[["On-Time (early or &lt; 15 min)","Significant Delay (&gt;= 90 min or cancelled)","Minor Delay (15 - 89 min)"],[49436,2598,9877],[80,4,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Arrival Status<\/th>\n      <th>Total Flights (#)<\/th>\n      <th>Total Flights (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 The chart below shows the arrival status by destination. What's striking here is that despite being the busiest airport, flights to ATL managed to also be the most timely, having the smallest shares of both delay types. Flights to the two other busiest airports - ORD and DFW - also had a relatively smaller share of its trips delayed, however they were more likely to be significant ones. Meanwhile, on-time performance to SFO (San Francisco International) was the worst, where approximately 30 percent of its flights were delayed to some extent.
 
@@ -807,8 +808,8 @@ tbl.q7_aDelMin.ss <- datatable(q7_aDelMin.ss, options = list(dom = 't'), rowname
 tbl.q7_aDelMin.ss
 ```
 
-<!--html_preserve--><div id="htmlwidget-15ab3753dc1b001053c4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-15ab3753dc1b001053c4">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics<\/caption>","data":[["ATL","DEN","DFW","LAX","OAK","ORD","PHX","SAN","SEA","SFO"],[53,65,82,53,56,78,52,48,51,66],[15,15,15,15,15,15,15,15,15,15],[21,23,24,22,21,24,23,21,22,26],[32,39,44,35,35,44,34,31,33,46],[58,79,84,62,64,84,59,52,60,80],[644,927,1343,1174,1400,1133,821,1215,902,1018]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Destination<\/th>\n      <th>Mean<\/th>\n      <th>Minimum<\/th>\n      <th>Quartile 1<\/th>\n      <th>Median<\/th>\n      <th>Quartile 3<\/th>\n      <th>Maximum<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-f5f13617c787c22d67b7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f5f13617c787c22d67b7">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics<\/caption>","data":[["ATL","DEN","DFW","LAX","OAK","ORD","PHX","SAN","SEA","SFO"],[53,65,82,53,56,78,52,48,51,66],[15,15,15,15,15,15,15,15,15,15],[21,23,24,22,21,24,23,21,22,26],[32,39,44,35,35,44,34,31,33,46],[58,79,84,62,64,84,59,52,60,80],[644,927,1343,1174,1400,1133,821,1215,902,1018]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Destination<\/th>\n      <th>Mean<\/th>\n      <th>Minimum<\/th>\n      <th>Quartile 1<\/th>\n      <th>Median<\/th>\n      <th>Quartile 3<\/th>\n      <th>Maximum<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Looking at the hard numbers provided in the table above, flights to ATL, SAN (San Diego International), and SEA (Seattle-Tacoma International) - when delayed - had the lowest median delay minutes at 32, 31, and 33 minutes, respectively. Taken together with relatively less dispersions from these times, one can conclude that these three airports were the best performers for punctuality. 
 
@@ -866,8 +867,8 @@ tbl.q8_aDelMinReas <- datatable(q8_aDelMinReas.p, options = list(dom = "t"), row
 tbl.q8_aDelMinReas
 ```
 
-<!--html_preserve--><div id="htmlwidget-01a6467391dd6d1863d1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-01a6467391dd6d1863d1">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals<\/caption>","data":[["Carrier","Weather","NAS","Security","Late-arriving Aircraft"],[200178,8940,199050,577,299105],[28.3,1.3,28.1,0.1,42.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Reason<\/th>\n      <th>Total Minutes (#)<\/th>\n      <th>Total Minutes (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-63233d76266783e52fae" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-63233d76266783e52fae">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals<\/caption>","data":[["Carrier","Weather","NAS","Security","Late-arriving Aircraft"],[200178,8940,199050,577,299105],[28.3,1.3,28.1,0.1,42.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Reason<\/th>\n      <th>Total Minutes (#)<\/th>\n      <th>Total Minutes (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Why a flight was delayed could be due to a single reason or a combination of them. The table above provides a breakdown of the contribution each reason made to the total flight delay minutes for the year. Late-arriving Aircraft contributed the most at 42 percent, followed by Carrier and NAS (both at 28 percent). The impact from Weather and Security reasons were negligible. 
 
