@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Accessing SQLite & Querying with DBI in R 
+title: Accessing SQLite & Querying with DBI
 subtitle: To Analyze Flight Activity at McCarran Airport in Las Vegas
 bigimg: /img/2019-04-11_files/mccarranairport.jpg
 tags: [r-project, flights, SQLite, DBI, queries]
