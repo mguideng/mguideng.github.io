@@ -7,12 +7,9 @@ tags: [r-project, flights, SQLite, DBI, queries]
 output: 
   html_document: 
     keep_md: yes
-    df_print: default
-    self_contained: yes
-    mode: selfcontained
     code_folding: hide
     toc: yes
-    toc_depth: 3
+    toc_depth: 4
     toc_float:
       collapsed: no
 ---
@@ -28,8 +25,6 @@ _For desktop users interested in the **R** codes, toggle buttons are available t
 
 
 =======
-
-## Section 1. Intro
 
 **R** provides various ways to access Comma Separated Values (CSV) files. CSV files are in a plain text format designed to easily exchange data between different applications. An easy way to import the data from a CSV file into **R** and keep the object in memory is to use the built-in `read.csv` function. 
 
@@ -47,7 +42,7 @@ Thus, the learning goals covered here will be to:
 - Summarize the data and generate exhibits for each query (using **dplyr**, **ggplot2**, and **DT**).
 
 
-## Section 2. About the Data
+## 1. About the Data
 
 Commercial airline carriers report the flights information to the U.S. Department of Transportation's [Bureau of Transportation Statistics](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) (BTS). The publically-available source data was abridged and extracted as a set of plain-text CSV files. The data was then loaded into a **SQLite** database and saved as _"flights2018.db"_. 
 
@@ -64,7 +59,7 @@ The main table is _flights_, and we'll go over the details for all the columns i
 - `flights.carrier` references `carrier.code`
 - `flights.dayofwk` references `days.code`
 
-## Section 3. Connecting to a SQLite Database
+## 2. Connecting to a SQLite Database
 
 In order to interact with **SQLite**, we need to bring in **RSQLite**, the package that embeds **SQLite** in **R**. It will serve as a backend extension to **DBI**. (In addition to **SQLite**, other DBI-compliant DBMS types include **MonetDB**, **MySQL**, **PostgreSQL**.) Common **DBI** functions will be used to connect to **SQLite**, execute statements from there, and retrieve results from the statements into **R**. 
 
@@ -147,7 +142,7 @@ These 17 fields contain the following information:
 - **ad_carrier**, **ad_weather**, **ad_nas**, **ad_security**, and **ad_lateaircraft**: minutes contributed to arrival delay(s), reason(s) due to a carrier, weather, National Aviation System, airport security, and late-arriving aircraft, respectively (0 or more only when arr_del15 = 1, NA otherwise)
 
 
-## Section 4. Research Questions
+## 3. Research Questions
 
 The data in the _flights_ table provide for the development of a lot of interesting questions. The ones to address here include the following:
 
@@ -157,7 +152,7 @@ The data in the _flights_ table provide for the development of a lot of interest
 - What were the main reasons for flight delays from LAS?
 
 
-## Section 5. Applying SQL Statements
+## 4. Applying SQL Statements
 
 At this point, we've connected to a database, checked all the tables are in, defined the contents in the _flights_ table, and come up with some general questions to explore. In this section, we move on to how SQL statements can be used in **R** through written queries. Most will be simple, with a few complex nested ones, in order to arrange the data (e.g., filter, group, summarize, sort, etc.). We won't go over all the different types of SQL statements, but suffice to say we will use SELECT, ALTER, and UPDATE to query the database.
 
@@ -262,7 +257,7 @@ So far, we've applied SELECT statements, which is the only type `dbGetQuery()` t
 
 These two **DBI** functions are enough for our purposes, but there's more documented in the vignette available [here](https://cran.r-project.org/web/packages/DBI/index.html) should you want to explore them.
 
-## Section 6. Exploring Flight Activity at LAS
+## 5. Exploring Flight Activity at LAS
 
 In this section, we intend to answer our research questions related to flight activity at LAS by extracting the necessary chunks of data using queries and transforming them into exhibits. The following additional packages will be needed: 
 
@@ -708,8 +703,8 @@ tbl.q6_ontPerform <- datatable(q6_ontPerform.sTbl, options = list(dom = "t"), ro
 tbl.q6_ontPerform
 ```
 
-<!--html_preserve--><div id="htmlwidget-dfd7a0975e299fc52a55" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dfd7a0975e299fc52a55">{"x":{"filter":"none","caption":"<caption>Table: Arrival Status to the Top 10 Destinations from LAS<\/caption>","data":[["On-Time (early or &lt; 15 min)","Significant Delay (&gt;= 90 min or cancelled)","Minor Delay (15 - 89 min)"],[49436,2598,9877],[80,4,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Arrival Status<\/th>\n      <th>Total Flights (#)<\/th>\n      <th>Total Flights (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-753ed7d7ee86c36ea204" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-753ed7d7ee86c36ea204">{"x":{"filter":"none","caption":"<caption>Table: Arrival Status to the Top 10 Destinations from LAS<\/caption>","data":[["On-Time (early or &lt; 15 min)","Significant Delay (&gt;= 90 min or cancelled)","Minor Delay (15 - 89 min)"],[49436,2598,9877],[80,4,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Arrival Status<\/th>\n      <th>Total Flights (#)<\/th>\n      <th>Total Flights (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 The chart below shows the arrival status by destination. What's striking here is that despite being the busiest airport, flights to ATL managed to also be the most timely, having the smallest shares of both delay types. Flights to the two other busiest airports - ORD and DFW - also had a relatively smaller share of its trips delayed, however they were more likely to be significant ones. Meanwhile, on-time performance to SFO (San Francisco International) was the worst, where approximately 30 percent of its flights were delayed to some extent.
 
@@ -808,8 +803,8 @@ tbl.q7_aDelMin.ss <- datatable(q7_aDelMin.ss, options = list(dom = 't'), rowname
 tbl.q7_aDelMin.ss
 ```
 
-<!--html_preserve--><div id="htmlwidget-f5f13617c787c22d67b7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f5f13617c787c22d67b7">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics<\/caption>","data":[["ATL","DEN","DFW","LAX","OAK","ORD","PHX","SAN","SEA","SFO"],[53,65,82,53,56,78,52,48,51,66],[15,15,15,15,15,15,15,15,15,15],[21,23,24,22,21,24,23,21,22,26],[32,39,44,35,35,44,34,31,33,46],[58,79,84,62,64,84,59,52,60,80],[644,927,1343,1174,1400,1133,821,1215,902,1018]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Destination<\/th>\n      <th>Mean<\/th>\n      <th>Minimum<\/th>\n      <th>Quartile 1<\/th>\n      <th>Median<\/th>\n      <th>Quartile 3<\/th>\n      <th>Maximum<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-85e27063aa7fe0b0da36" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-85e27063aa7fe0b0da36">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics<\/caption>","data":[["ATL","DEN","DFW","LAX","OAK","ORD","PHX","SAN","SEA","SFO"],[53,65,82,53,56,78,52,48,51,66],[15,15,15,15,15,15,15,15,15,15],[21,23,24,22,21,24,23,21,22,26],[32,39,44,35,35,44,34,31,33,46],[58,79,84,62,64,84,59,52,60,80],[644,927,1343,1174,1400,1133,821,1215,902,1018]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Destination<\/th>\n      <th>Mean<\/th>\n      <th>Minimum<\/th>\n      <th>Quartile 1<\/th>\n      <th>Median<\/th>\n      <th>Quartile 3<\/th>\n      <th>Maximum<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Looking at the hard numbers provided in the table above, flights to ATL, SAN (San Diego International), and SEA (Seattle-Tacoma International) - when delayed - had the lowest median delay minutes at 32, 31, and 33 minutes, respectively. Taken together with relatively less dispersions from these times, one can conclude that these three airports were the best performers for punctuality. 
 
@@ -867,8 +862,8 @@ tbl.q8_aDelMinReas <- datatable(q8_aDelMinReas.p, options = list(dom = "t"), row
 tbl.q8_aDelMinReas
 ```
 
-<!--html_preserve--><div id="htmlwidget-63233d76266783e52fae" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-63233d76266783e52fae">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals<\/caption>","data":[["Carrier","Weather","NAS","Security","Late-arriving Aircraft"],[200178,8940,199050,577,299105],[28.3,1.3,28.1,0.1,42.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Reason<\/th>\n      <th>Total Minutes (#)<\/th>\n      <th>Total Minutes (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-bd0c25530c7cfb281b6f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bd0c25530c7cfb281b6f">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals<\/caption>","data":[["Carrier","Weather","NAS","Security","Late-arriving Aircraft"],[200178,8940,199050,577,299105],[28.3,1.3,28.1,0.1,42.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Reason<\/th>\n      <th>Total Minutes (#)<\/th>\n      <th>Total Minutes (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Why a flight was delayed could be due to a single reason or a combination of them. The table above provides a breakdown of the contribution each reason made to the total flight delay minutes for the year. Late-arriving Aircraft contributed the most at 42 percent, followed by Carrier and NAS (both at 28 percent). The impact from Weather and Security reasons were negligible. 
 
@@ -984,7 +979,7 @@ cat(paste("Number of flights:",
 
 Of the ~11,800 delayed flights at departure, 80.4 percent saw a subsequent delay at arrival. The remaining 19.6 percent? They were able to recover. This means that one in five flights were able to make up time in the air and arrive to their destinations on time despite departing late from LAS. Interesting!
 
-## Section 7. Summary
+## 6. Summary
 
 In this post, we demonstrated how to access an outside **SQLite** database and run queries using the **DBI** and **RSQLite** packages. We performed various data manipulation, summarization, and visualization tasks intended to answer a series of questions related to flights activity at LAS and on-time performance to its top destinations. 
 
