@@ -19,7 +19,7 @@ _To make it even more manageable, the focus will be on my hometown airport: McCa
 
 _For convenience, **R** codes are available throughout and are also available in its entirety (including code for generating further data manipulation, chart, and table tasks) on my [GitHub](https://github.com/mguideng/flights-sqlite)._
 
-***
+=======
 
 **R** provides various ways to access Comma Separated Values (CSV) files. CSV files are in a plain text format designed to easily exchange data between different applications. An easy way to import the data from a CSV file into **R** and keep the object in memory is to use the built-in `read.csv` function. 
 
@@ -684,6 +684,8 @@ How about more lackluster performers? This included DFW and ORD, both with a med
 </tbody>
 </table>
 
+<br>
+
 #### Q8. What were the main reasons for the arrival delays?
 
 When a flight is delayed, passengers often look for something to blame. Does one blame extreme weather, security at the airport, or the carrier? All of these are cited as reasons according to the BTS, in addition to two others: air traffic problems (NAS) and late-arriving aircraft. These last two are somewhat ambiguous based on the definitions given directly by the [source](https://www.bts.gov/topics/airlines-and-airports/understanding-reporting-causes-flight-delays-and-cancellations):
@@ -841,7 +843,7 @@ In this post, we demonstrated how to access an outside **SQLite** database and r
 Of particular interest was our findings that late flights can make up lost time in air. The extent to which this happens is interesting enough that we could come up with a whole other series of questions to explore on this topic alone. In the next post, we'll do just that and incorporate some statistical regression modeling.
 
 
-***
+=======
 
 **Learning points**
 
