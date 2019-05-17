@@ -17,17 +17,13 @@ output:
       collapsed: no
 ---
 
-
-
-
 _This post provides an analysis demo using flights data in **R**. The source data includes information on over 7.2 million scheduled non-stop U.S. domestic flights during 2018. Given the data's large size, the **DBI** package will be used to access a **SQLite** database where the data is stored. That way, database queries can be generated outside of **R** without having to bring in the entire dataset as an object._ 
 
 _To make it even more manageable, the focus will be on my hometown airport: McCarran International Airport (LAS), the main airport servicing the Las Vegas metro area. The queries will summarize flight activity and key on-time performance measures: cancellations and flight delays. Findings will be displayed via tables and charts._
 
 _For desktop users interested in the **R** codes, toggle buttons are available to show them. They are also available in its entirety on my [GitHub](https://github.com/mguideng/flights-sqlite)._
 
-
-=======
+***
 
 **R** provides various ways to access Comma Separated Values (CSV) files. CSV files are in a plain text format designed to easily exchange data between different applications. An easy way to import the data from a CSV file into **R** and keep the object in memory is to use the built-in `read.csv` function. 
 
@@ -42,7 +38,7 @@ All the data will not be used since the focus will be on answering a series of q
 Thus, the learning goals covered here will be to:
 
 - Access a database and run SQL queries in **R** (using **DBI** and **RSQLite** ), and
-- Summarize the data and generate exhibits for each query (using **dplyr**, **ggplot2**, and **DT**).
+- Summarize the data and generate exhibits for each query (using **dplyr**, **ggplot2**, and **knitr**).
 
 
 ## 1. About the Data
@@ -62,7 +58,7 @@ The main table is _flights_, and we'll go over the details for all the columns i
 - `flights.carrier` references `carrier.code`
 - `flights.dayofwk` references `days.code`
 
-## 2. Connecting to a SQLite Database
+## 2. Connecting to SQLite
 
 In order to interact with **SQLite**, we need to bring in **RSQLite**, the package that embeds **SQLite** in **R**. It will serve as a backend extension to **DBI**. (In addition to **SQLite**, other DBI-compliant DBMS types include **MonetDB**, **MySQL**, **PostgreSQL**.) Common **DBI** functions will be used to connect to **SQLite**, execute statements from there, and retrieve results from the statements into **R**. 
 
@@ -260,27 +256,29 @@ So far, we've applied SELECT statements, which is the only type `dbGetQuery()` t
 
 These two **DBI** functions are enough for our purposes, but there's more documented in the vignette available [here](https://cran.r-project.org/web/packages/DBI/index.html) should you want to explore them.
 
-## 5. Exploring Flight Activity at LAS
+## 5. Exploring Flights Data for LAS
 
-In this section, we intend to answer our research questions related to flight activity at LAS by extracting the necessary chunks of data using queries and transforming them into exhibits. The following additional packages will be needed: 
+In this section, we intend to answer our research questions related to the LAS airport by extracting the necessary chunks of data using queries and transforming them into exhibits. The following additional packages will be needed: 
 
 - **dplyr** for further data manipulation    
 - **ggplot2** for chart exhibits    
-- **DT** for table exhibits
+- **knitr** for table exhibits
 
 
 ```r
 # Load packages
 library(dplyr)
+
 library(ggplot2)
   theme_set(theme_bw()) #options for ggplot2
 library(wesanderson)  #color pallette for ggplot2
   heat <- wes_palette("Zissou1", 100, type = "continuous")
   bar_col <- c("blue" = "#009BB2", "red" = "#FF0000", "yellow" = "#F4CA2F")
-library(DT)
-  options(DT.options = list(dom = 'tip', pageLength = 25, searching = F, autoWidth = T),
-          style = "bootstrap", 
-          class = "table-bordered table-condensed") #options for datatable()
+
+library(knitr) #document build & kable tables
+options(knitr.table.format = "html") #options for knitr
+knitr::opts_chunk$set(fig.width=8, fig.height=5, fig.align="center", message=FALSE, warning=FALSE)
+library(kableExtra) #format tables
 ```
 
 The research questions have been developed into 10 specific ones, half concerning flight activity at LAS (Part A) and the other half concerning on-time performance to the top 10 destinations from LAS (Part B).
@@ -357,7 +355,7 @@ viz.q1_fltAirp <- ggplot(q1_fltAirp.s, aes(x = AirportCode, y = flights, fill = 
 viz.q1_fltAirp
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 The chart above shows the top 20 busiest U.S. airports, based on the number of scheduled flights serviced (in both directions, as the origin and destination) on an annual basis. Without information on passenger count and seat capacity, we miss a complete picture of how busy an airport really is. Regardless of how it could be measured, ATL (Hartsfield-Jackson Atlanta) takes the top spot by far. No surprise here; ATL has held this rank for over the past decade. ORD (Chicago O'Hare) trails second, followed by DFW (Dallas/Fort Worth).
 
@@ -396,7 +394,7 @@ viz.q2_fltMonth <- ggplot(q2_fltMonth, aes(x = month, y = num_flights, fill = co
 viz.q2_fltMonth
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
 Tourism levels can vary significantly depending on the type of vacation and business destination a region is considered to be. For Las Vegas, the city attracts visitors year round, so it does not have well-defined high and low tourism seasons. 
 
@@ -434,7 +432,7 @@ viz.q3_fltDay <- ggplot(q3_fltDay, aes(x = reorder(day, dayofwk), y = num_flight
 viz.q3_fltDay
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
 
 Mondays, Thursdays, Fridays, and Sundays were likewise the busiest days in terms of scheduled flights to and from LAS.
 
@@ -493,7 +491,7 @@ viz.q4_fltCarr <- ggplot(q4_fltCarr, aes(x = reorder(carrier_name, num_flights),
 viz.q4_fltCarr
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 Of the 12 carriers, Southwest Airlines operated the most flights to and from LAS, making it the largest carrier there by a long stretch (46% share). The [latest statistics](https://www.swamedia.com/pages/city-fact-sheets) provided by Southwest at the time of this writing reports LAS as the carrier's third busiest airport in terms of daily departures, serviced across 54 U.S. destinations.
 
@@ -587,7 +585,7 @@ viz.q5_fltCityPairs <- ggplot(q5_fltCityPairs, aes(x = reorder(CityName, -ord),
 viz.q5_fltCityPairs
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 A few comments on the chart above. First, when looking at the degree of outbound flights _from_ Las Vegas (blue) and inbound flights _to_ Las Vegas (yellow), they are practically in-line with each other. A quick check, calculated as: outbound from origin / inbound to destination, shows this to be the case when values are equal to 1.
 
@@ -697,17 +695,45 @@ q6_ontPerform.sTbl <- q6_ontPerform.s %>%
   summarize(totalnum = sum(n)) %>% 
   mutate(totalpcnt = round(totalnum / sum(totalnum) * 100))
 
-tbl.q6_ontPerform <- datatable(q6_ontPerform.sTbl, options = list(dom = "t"), rownames = F,
-                      caption = "Table: Arrival Status to the Top 10 Destinations from LAS",
-                      colnames = c("Arrival Status" = 1, 
-                                   "Total Flights (#)" = 2,
-                                   "Total Flights (%)" = 3))
+tbl.q6_ontPerform <- kable(q6_ontPerform.sTbl, 
+      col.names = c("Arrival Status",
+                    "Total Flights (#)",
+                    "Total Flights (%)"),
+      caption = "Table: Arrival Status to the Top 10 Destinations from LAS") %>%
+  column_spec(1, width = "5cm") %>% column_spec(2, width = "3cm") %>% column_spec(3, width = "3cm")
 
 tbl.q6_ontPerform
 ```
 
-<!--html_preserve--><div id="htmlwidget-272c5710810975905ad8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-272c5710810975905ad8">{"x":{"filter":"none","caption":"<caption>Table: Arrival Status to the Top 10 Destinations from LAS<\/caption>","data":[["On-Time (early or &lt; 15 min)","Significant Delay (&gt;= 90 min or cancelled)","Minor Delay (15 - 89 min)"],[49436,2598,9877],[80,4,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Arrival Status<\/th>\n      <th>Total Flights (#)<\/th>\n      <th>Total Flights (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<table>
+<caption>Table: Arrival Status to the Top 10 Destinations from LAS</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Arrival Status </th>
+   <th style="text-align:right;"> Total Flights (#) </th>
+   <th style="text-align:right;"> Total Flights (%) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 5cm; "> On-Time (early or &lt; 15 min) </td>
+   <td style="text-align:right;width: 3cm; "> 49436 </td>
+   <td style="text-align:right;width: 3cm; "> 80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 5cm; "> Significant Delay (&gt;= 90 min or cancelled) </td>
+   <td style="text-align:right;width: 3cm; "> 2598 </td>
+   <td style="text-align:right;width: 3cm; "> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 5cm; "> Minor Delay (15 - 89 min) </td>
+   <td style="text-align:right;width: 3cm; "> 9877 </td>
+   <td style="text-align:right;width: 3cm; "> 16 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
 
 The chart below shows the arrival status by destination. What's striking here is that despite being the busiest airport, flights to ATL managed to also be the most timely, having the smallest shares of both delay types. Flights to the two other busiest airports - ORD and DFW - also had a relatively smaller share of its trips delayed, however they were more likely to be significant ones. Meanwhile, on-time performance to SFO (San Francisco International) was the worst, where approximately 30 percent of its flights were delayed to some extent.
 
@@ -732,7 +758,7 @@ viz.q6_ontPerform <- ggplot(q6_ontPerform.s, aes(x = reorder(dest, n), y = n, fi
 viz.q6_ontPerform
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 #### Q7. How many minutes can you expect to be delayed? 
 
@@ -771,7 +797,7 @@ viz.q7_aDelMin <- ggplot(q7_aDelMin, aes(x = Dest, y = arr_del, fill = col)) +
 viz.q7_aDelMin
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 In short, the central rectangle boxes span the interquartile ranges (IQR) from low (Q1) to high (Q3); the vertical line inside marks the median; and the black dots show the outliers (over 1.5 x Q3).
 
@@ -793,21 +819,127 @@ q7_aDelMin.ss <- q7_aDelMin.ss[, list(Mean = mean(arr_del),
 q7_aDelMin.ss <- q7_aDelMin.ss %>% 
   mutate_if(is.numeric, ~round(., 0))
 
-tbl.q7_aDelMin.ss <- datatable(q7_aDelMin.ss, options = list(dom = 't'), rownames = F, escape = T,
-                    caption = "Table: Minutes Delayed at Arrival, by Destination - Summary Statistics",
-                    colnames = c("Destination" = 1,
-                                 "Mean" = 2,
-                                 "Minimum" = 3,
-                                 "Quartile 1" = 4,
-                                 "Median" = 5,
-                                 "Quartile 3" = 6,
-                                 "Maximum" = 7))
+tbl.q7_aDelMin.ss <- kable(q7_aDelMin.ss, 
+      col.names = c("Destination",
+                    "Mean",
+                    "Minimum",
+                    "Quartile 1",
+                    "Median",
+                    "Quartile 3",
+                    "Maximum"),
+      caption = "Table: Minutes Delayed at Arrival, by Destination - Summary Statistics")
 
 tbl.q7_aDelMin.ss
 ```
 
-<!--html_preserve--><div id="htmlwidget-f510332e220795304cf0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f510332e220795304cf0">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics<\/caption>","data":[["ATL","DEN","DFW","LAX","OAK","ORD","PHX","SAN","SEA","SFO"],[53,65,82,53,56,78,52,48,51,66],[15,15,15,15,15,15,15,15,15,15],[21,23,24,22,21,24,23,21,22,26],[32,39,44,35,35,44,34,31,33,46],[58,79,84,62,64,84,59,52,60,80],[644,927,1343,1174,1400,1133,821,1215,902,1018]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Destination<\/th>\n      <th>Mean<\/th>\n      <th>Minimum<\/th>\n      <th>Quartile 1<\/th>\n      <th>Median<\/th>\n      <th>Quartile 3<\/th>\n      <th>Maximum<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<table>
+<caption>Table: Minutes Delayed at Arrival, by Destination - Summary Statistics</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Destination </th>
+   <th style="text-align:right;"> Mean </th>
+   <th style="text-align:right;"> Minimum </th>
+   <th style="text-align:right;"> Quartile 1 </th>
+   <th style="text-align:right;"> Median </th>
+   <th style="text-align:right;"> Quartile 3 </th>
+   <th style="text-align:right;"> Maximum </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> ATL </td>
+   <td style="text-align:right;"> 53 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 58 </td>
+   <td style="text-align:right;"> 644 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DEN </td>
+   <td style="text-align:right;"> 65 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:right;"> 79 </td>
+   <td style="text-align:right;"> 927 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DFW </td>
+   <td style="text-align:right;"> 82 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 44 </td>
+   <td style="text-align:right;"> 84 </td>
+   <td style="text-align:right;"> 1343 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LAX </td>
+   <td style="text-align:right;"> 53 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 62 </td>
+   <td style="text-align:right;"> 1174 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OAK </td>
+   <td style="text-align:right;"> 56 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 64 </td>
+   <td style="text-align:right;"> 1400 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ORD </td>
+   <td style="text-align:right;"> 78 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 44 </td>
+   <td style="text-align:right;"> 84 </td>
+   <td style="text-align:right;"> 1133 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PHX </td>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:right;"> 821 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SAN </td>
+   <td style="text-align:right;"> 48 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:right;"> 1215 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SEA </td>
+   <td style="text-align:right;"> 51 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 60 </td>
+   <td style="text-align:right;"> 902 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SFO </td>
+   <td style="text-align:right;"> 66 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:right;"> 46 </td>
+   <td style="text-align:right;"> 80 </td>
+   <td style="text-align:right;"> 1018 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
 
 Looking at the hard numbers provided in the table above, flights to ATL, SAN (San Diego International), and SEA (Seattle-Tacoma International) - when delayed - had the lowest median delay minutes at 32, 31, and 33 minutes, respectively. Taken together with relatively less dispersions from these times, one can conclude that these three airports were the best performers for punctuality. 
 
@@ -856,17 +988,54 @@ q8_aDelMinReas.p <- q8_aDelMinReas.m %>%
   mutate(totalpcnt = round(totalnum / sum(totalnum) * 100, 1))
 
 # TBL
-tbl.q8_aDelMinReas <- datatable(q8_aDelMinReas.p, options = list(dom = "t"), rownames = F,
-                      caption = "Table: Minutes Delayed at Arrival, by Reason - Percent of Totals",
-                      colnames = c("Reason" = 1, 
-                                   "Total Minutes (#)" = 2,
-                                   "Total Minutes (%)" = 3))
+tbl.q8_aDelMinReas <- kable(q8_aDelMinReas.p, 
+      col.names = c("Reason",
+                    "Total Minutes (#)",
+                    "Total Minutes (%)"),
+      caption = "Table: Minutes Delayed at Arrival, by Reason - Percent of Totals")
 
 tbl.q8_aDelMinReas
 ```
 
-<!--html_preserve--><div id="htmlwidget-05ae3277f7f504fa99ee" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-05ae3277f7f504fa99ee">{"x":{"filter":"none","caption":"<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals<\/caption>","data":[["Carrier","Weather","NAS","Security","Late-arriving Aircraft"],[200178,8940,199050,577,299105],[28.3,1.3,28.1,0.1,42.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Reason<\/th>\n      <th>Total Minutes (#)<\/th>\n      <th>Total Minutes (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":25,"searching":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<table>
+<caption>Table: Minutes Delayed at Arrival, by Reason - Percent of Totals</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Reason </th>
+   <th style="text-align:right;"> Total Minutes (#) </th>
+   <th style="text-align:right;"> Total Minutes (%) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Carrier </td>
+   <td style="text-align:right;"> 200178 </td>
+   <td style="text-align:right;"> 28.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Weather </td>
+   <td style="text-align:right;"> 8940 </td>
+   <td style="text-align:right;"> 1.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NAS </td>
+   <td style="text-align:right;"> 199050 </td>
+   <td style="text-align:right;"> 28.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Security </td>
+   <td style="text-align:right;"> 577 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Late-arriving Aircraft </td>
+   <td style="text-align:right;"> 299105 </td>
+   <td style="text-align:right;"> 42.3 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
 
 Why a flight was delayed could be due to a single reason or a combination of them. The table above provides a breakdown of the contribution each reason made to the total flight delay minutes for the year. Late-arriving Aircraft contributed the most at 42 percent, followed by Carrier and NAS (both at 28 percent). The impact from Weather and Security reasons were negligible. 
 
@@ -920,7 +1089,7 @@ viz.q9_aDelHeat <- ggplot(q9_aDelHeat.m, aes(x = Reason, y = carrier_name)) +
 viz.q9_aDelHeat
 ```
 
-<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="2019-04-11-flights-sql_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 The percent of total minutes that contributed to a flight's delay for each reason were aggregated and shown on a scale in the range of 0 to 100. A larger value (red) represents a higher percent contributing to a delay, and a smaller one (blue) indicates a lesser percentage. They were broken out by reason and by carrier, for each destination from LAS. 
 
@@ -989,7 +1158,7 @@ In this post, we demonstrated how to access an outside **SQLite** database and r
 Of particular interest was our findings that late flights can make up lost time in air. The extent to which this happens is interesting enough that we could come up with a whole other series of questions to explore on this topic alone. In the next post, we'll do just that and incorporate some statistical regression modeling.
 
 
-=======
+***
 
 **Learning points**
 
