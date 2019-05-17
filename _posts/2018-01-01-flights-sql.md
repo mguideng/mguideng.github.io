@@ -17,6 +17,12 @@ output:
       collapsed: no
 ---
 
+<link rel="stylesheet" type="text/css" href="include/style.css">
+
+<!-- From https://stackoverflow.com/a/37839683/1297830 -->
+<link rel="stylesheet" type="text/css" href="include/hideOutput.css">
+<script src="include/hideOutput.js"></script>
+
 _This post provides an analysis demo using flights data in **R**. The source data includes information on over 7.2 million scheduled non-stop U.S. domestic flights during 2018. Given the data's large size, the **DBI** package will be used to access a **SQLite** database where the data is stored. That way, database queries can be generated outside of **R** without having to bring in the entire dataset as an object._ 
 
 _To make it even more manageable, the focus will be on my hometown airport: McCarran International Airport (LAS), the main airport servicing the Las Vegas metro area. The queries will summarize flight activity and key on-time performance measures: cancellations and flight delays. Findings will be displayed via tables and charts._
@@ -64,18 +70,22 @@ In order to interact with **SQLite**, we need to bring in **RSQLite**, the packa
 
 **DBI** is installed with **RSQLite** so there is no need to install it separately.
 
+<div class="fold s">
 
 ```r
 install.packages("RSQLite")
 ```
+</div>
 
 After installation, the packages' libraries will be loaded into the **R** environment. **DBI** will be loaded first, not **RSQLite**, since the functions to be used will primarily come from **DBI**. 
 
+<div class="fold s">
 
 ```r
 library(DBI)
 library(RSQLite)
 ```
+</div>
 
 Connection to the database is made through the function call `dbConnect()`.
 
@@ -733,8 +743,6 @@ tbl.q6_ontPerform
 </tbody>
 </table>
 
-<br>
-
 The chart below shows the arrival status by destination. What's striking here is that despite being the busiest airport, flights to ATL managed to also be the most timely, having the smallest shares of both delay types. Flights to the two other busiest airports - ORD and DFW - also had a relatively smaller share of its trips delayed, however they were more likely to be significant ones. Meanwhile, on-time performance to SFO (San Francisco International) was the worst, where approximately 30 percent of its flights were delayed to some extent.
 
 
@@ -939,8 +947,6 @@ tbl.q7_aDelMin.ss
 </tbody>
 </table>
 
-<br>
-
 Looking at the hard numbers provided in the table above, flights to ATL, SAN (San Diego International), and SEA (Seattle-Tacoma International) - when delayed - had the lowest median delay minutes at 32, 31, and 33 minutes, respectively. Taken together with relatively less dispersions from these times, one can conclude that these three airports were the best performers for punctuality. 
 
 How about more lackluster performers? This included DFW and ORD, both with a median delay of 44 minutes. These two were very similar in their on-time performance across the board. And, SFO, despite the closer vicinity to LAS, was even worse. You can expect to arrive there 46 minutes late (median). On average, it appeared to do better than DFW and ORD, however this was heavily skewed by the more frequent minor delays.
@@ -1034,8 +1040,6 @@ tbl.q8_aDelMinReas
   </tr>
 </tbody>
 </table>
-
-<br>
 
 Why a flight was delayed could be due to a single reason or a combination of them. The table above provides a breakdown of the contribution each reason made to the total flight delay minutes for the year. Late-arriving Aircraft contributed the most at 42 percent, followed by Carrier and NAS (both at 28 percent). The impact from Weather and Security reasons were negligible. 
 
