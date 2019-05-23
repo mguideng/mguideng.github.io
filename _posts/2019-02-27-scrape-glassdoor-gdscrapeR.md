@@ -117,7 +117,7 @@ Layout updates and new feature implementations will change the HTML structure of
 
 ![](https://raw.githubusercontent.com/mguideng/mguideng.github.io/master/img/2019-02-27_files/6spacex-absplit.PNG)
 
-It's obvious by now that getting the data we want requires selecting the right elements, so different selectors due to changes will return a null (or differing) number of rows. In these cases, using `gdscrapeR` will throw an error shown as _"Could not scrape data from website."_. This is because at least one of our variables returned a differing row length (e.g., 0 or 1,111 instead of 1,112) and therefore did not meet the condition for `map_dfr()` before it can row bind.
+It's obvious by now that getting the data we want requires selecting the right elements, so different selectors due to changes will return a null (or differing) number of rows. In these cases, using `gdscrapeR` will throw an error shown as _"Could not scrape data from website."_ This is because at least one of our variables returned an inconsistent row length (e.g., 0 or 1,111 instead of 1,112) and therefore did not meet the condition for `map_dfr()` before it can row bind.
 
 #### Solutions
 Try `gdscrapeR` again at a later time with a new session to get the split version of the website that will work. 
